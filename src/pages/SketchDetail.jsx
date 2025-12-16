@@ -1,29 +1,31 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion"; // Added motion import
-import { useParams, useNavigate } from "react-router-dom"; // Added useNavigate
-import { sketches } from "./sketchesData";
+// src/pages/SketchDetail.jsx
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useParams, useNavigate } from "react-router-dom";
+import { sketches } from "./sketchesData.js";
+
 
 const SketchDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate(); // Initialize navigation
-  const sketch = sketches.find((sketch) => sketch.id === parseInt(id));
-  const [isPlaying, setIsPlaying] = useState(false);
+  const navigate = useNavigate();
+  const sketch = sketches.find((sk) => sk.id === parseInt(id));
 
   useEffect(() => {
     let audio;
     if (sketch && sketch.music) {
       audio = new Audio(sketch.music);
-      if (isPlaying) {
-        audio.play();
-      }
+      audio.loop = true;
+      const p = audio.play();
+      if (p !== undefined) p.catch((err) => console.warn("Autoplay prevented:", err));
     }
+
     return () => {
       if (audio) {
         audio.pause();
         audio.currentTime = 0;
       }
     };
-  }, [sketch, isPlaying]);
+  }, [sketch]);
 
   if (!sketch) {
     return <div>Sketch not found</div>;
@@ -31,7 +33,6 @@ const SketchDetail = () => {
 
   return (
     <div className="sketch-detail">
-      {/* Back Button */}
       <motion.button
         className="back-button"
         onClick={() => navigate(-1)}
@@ -45,11 +46,7 @@ const SketchDetail = () => {
       <div className="animated-background"></div>
       <img src={sketch.image} alt={sketch.title} />
       <p>{sketch.note}</p>
-      {sketch.music && (
-        <button onClick={() => setIsPlaying(!isPlaying)} className="music-button">
-          {isPlaying ? "Pause Music" : "Play Music"}
-        </button>
-      )}
+      {/* Play/Pause UI removed — music auto-plays on opening the detail */}
     </div>
   );
 };

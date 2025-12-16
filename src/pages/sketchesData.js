@@ -6,7 +6,7 @@ export const sketches = [
       title: "2018,nov 8", 
       image: "/Ipnb/2018,nov 8.jpg", 
       note: "2018,nov 8", 
-      music: "/assets/music1.mp3",
+      music: "/audio/aud1.mp3",
       favorite: true,
       category: "general"
     },
@@ -14,7 +14,7 @@ export const sketches = [
       id: 2, 
       title: "2019, june14", 
       image: "/Ipnb/2019, june14.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2019, june 14", 
       music: "/assets/music2.mp3",
       favorite: true,
       category: "general"
@@ -23,8 +23,8 @@ export const sketches = [
       id: 3, 
       title: "2019, june14", 
       image: "/Ipnb/2019 , Aug31.jpg", 
-      note: "A portrait of emotions.", 
-      music: "/assets/music2.mp3",
+      note: "2019, june14", 
+      music: "public/audio/aud1.mp3",
       favorite: false,
       category: "general"
     },
@@ -32,7 +32,7 @@ export const sketches = [
       id: 4, 
       title: "2019 , First Vote", 
       image: "/Ipnb/2019 , First Vote.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2019 , First Vote", 
       music: "/assets/music2.mp3",
       favorite: true,
       category: "general"
@@ -41,7 +41,7 @@ export const sketches = [
       id: 5, 
       title: "2021,Jan19", 
       image: "/Ipnb/2021,Jan19.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2021,Jan 19", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -50,7 +50,7 @@ export const sketches = [
       id: 6, 
       title: "2021, Jan25", 
       image: "/Ipnb/2021, Jan25.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2021, Jan 25", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -59,7 +59,7 @@ export const sketches = [
       id: 7, 
       title: "2021,Jan31", 
       image: "/Ipnb/2021,Jan31.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2021,Jan 31", 
       music: "/assets/music2.mp3",
       favorite: true,
       category: "general"
@@ -68,7 +68,7 @@ export const sketches = [
       id: 8, 
       title: "2021,Feb7", 
       image: "/Ipnb/2021,Feb7.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2021,Feb 7", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -77,7 +77,7 @@ export const sketches = [
       id: 9, 
       title: "2022,Jan11", 
       image: "/Ipnb/2022,Jan11.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Jan 11", 
       music: "/assets/music2.mp3",
       favorite: true,
       category: "general"
@@ -86,7 +86,7 @@ export const sketches = [
       id: 10, 
       title: "2022,Jan13", 
       image: "/Ipnb/2022,Jan13.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Jan 13", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -95,7 +95,7 @@ export const sketches = [
       id: 11, 
       title: "2022,Jan13", 
       image: "/Ipnb/2022,Jan13(1).jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Jan 13", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -104,7 +104,7 @@ export const sketches = [
       id: 12, 
       title: "2022,March 19", 
       image: "/Ipnb/2022,March19.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,March 19", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -113,7 +113,7 @@ export const sketches = [
       id: 13, 
       title: "2022,July26", 
       image: "/Ipnb/2022,July26.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,July 26", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -122,7 +122,7 @@ export const sketches = [
       id: 14, 
       title: "2022,Aug7", 
       image: "public/Ipnb/2022,Aug7.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Aug 7", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -131,7 +131,7 @@ export const sketches = [
       id: 15, 
       title: "2022,Aug12", 
       image: "/Ipnb/2022,Aug12.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Aug 12", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -140,7 +140,7 @@ export const sketches = [
       id: 16, 
       title: "2022,Aug28", 
       image: "/Ipnb/2022,Aug28.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Aug28", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -149,7 +149,7 @@ export const sketches = [
       id: 17, 
       title: "2022,Aug31", 
       image: "/Ipnb/2022,Aug31.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Aug31", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -158,7 +158,7 @@ export const sketches = [
       id: 18, 
       title: "2022,Sep26", 
       image: "/Ipnb/2022,Sep26.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Sep26", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -167,7 +167,7 @@ export const sketches = [
       id: 19, 
       title: "2022,Oct7", 
       image: "/Ipnb/2022,Oct7.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct7", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -176,7 +176,7 @@ export const sketches = [
       id: 20, 
       title: "2022,Oct11", 
       image: "/Ipnb/2022,Oct11.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct11", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -185,7 +185,7 @@ export const sketches = [
       id: 21, 
       title: "2022,Oct15", 
       image: "/Ipnb/2022,Oct15.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct15", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -194,7 +194,7 @@ export const sketches = [
       id: 22, 
       title: "2022,Oct15", 
       image: "/Ipnb/2022,Oct15(1).jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct15", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -203,7 +203,7 @@ export const sketches = [
       id: 23, 
       title: "2022,Oct19", 
       image: "/Ipnb/2022,Oct19.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct19", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -212,7 +212,7 @@ export const sketches = [
       id: 24, 
       title: "2022,Oct25", 
       image: "/Ipnb/2022,Oct25.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Oct25", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -221,7 +221,7 @@ export const sketches = [
       id: 25, 
       title: "2022,Nov18", 
       image: "/Ipnb/2022,Nov18.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Nov18", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -230,7 +230,7 @@ export const sketches = [
       id: 26, 
       title: "2022,Nov19", 
       image: "/Ipnb/2022,Nov19.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Nov19", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -239,7 +239,7 @@ export const sketches = [
       id: 27, 
       title: "2022,Nov24", 
       image: "/Ipnb/2022,Nov24.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Nov24", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -248,7 +248,7 @@ export const sketches = [
       id: 28, 
       title: "2022, Nov2", 
       image: "/Ipnb/2022, Nov27.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022, Nov2", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -257,7 +257,7 @@ export const sketches = [
       id: 29, 
       title: "2022,Dec15", 
       image: "/Ipnb/2022,Dec15.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2022,Dec 15", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -266,7 +266,7 @@ export const sketches = [
       id: 30, 
       title: "2023,Jan19", 
       image: "/Ipnb/2023,Jan19.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2023,Jan 19", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -275,7 +275,7 @@ export const sketches = [
       id: 31, 
       title: "2023,Feb10", 
       image: "/Ipnb/2023,Feb10.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2023,Feb 10", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -284,7 +284,7 @@ export const sketches = [
       id: 32, 
       title: "2023,Dec31", 
       image: "/Ipnb/2023,Dec31.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2023,Dec 31", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -293,7 +293,7 @@ export const sketches = [
       id: 33, 
       title: "2024,Mar30", 
       image: "/Ipnb/2024,Mar30.jpg", 
-      note: "A portrait of emotions.", 
+      note: "2024,Mar30", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -383,7 +383,7 @@ export const sketches = [
       id: 43, 
       title: "saari", 
       image: "/Ipnb/saari1.jpg", 
-      note: "A portrait of emotions.", 
+      note: "saari", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -392,7 +392,7 @@ export const sketches = [
       id: 44, 
       title: "Saari", 
       image: "/Ipnb/Saari2.jpg", 
-      note: "A portrait of emotions.", 
+      note: "Saari", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "general"
@@ -401,7 +401,7 @@ export const sketches = [
       id: 45, 
       title: "special", 
       image: "/Ipnb/special.jpg", 
-      note: "A portrait of emotions.", 
+      note: "special", 
       music: "/assets/music2.mp3",
       favorite: true,
       category: "general"
@@ -418,7 +418,7 @@ export const sketches = [
     { 
       id: 47, 
       title: "Temple", 
-      image: "public/EYES/Picsart_25-07-17_16-57-34-507.jpg", 
+      image: "/EYES/Picsart_25-07-17_16-57-34-507.jpg", 
       note: "A portrait of emotions.", 
       music: "/assets/music2.mp3",
       favorite: false,
@@ -427,7 +427,7 @@ export const sketches = [
     { 
       id: 48, 
       title: "Yellow", 
-      image: "public/EYES/Picsart_25-07-17_16-58-07-977.jpg", 
+      image: "/EYES/Picsart_25-07-17_16-58-07-977.jpg", 
       note: "A portrait of emotions.", 
       music: "/assets/music2.mp3",
       favorite: false,
@@ -437,8 +437,8 @@ export const sketches = [
     { 
       id: 49, 
       title: "2024,June1", 
-      image: "public/EYES/Picsart_25-07-17_16-58-36-484.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_16-58-36-484.jpg", 
+      note: "2024,June 1", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -446,8 +446,8 @@ export const sketches = [
     { 
       id: 50, 
       title: "2024,June2", 
-      image: "public/EYES/Picsart_25-07-17_16-59-17-482.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_16-59-17-482.jpg", 
+      note: "2024,June 2", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -456,8 +456,8 @@ export const sketches = [
     { 
       id: 51, 
       title: "2024,June3", 
-      image: "public/EYES/Picsart_25-07-17_16-59-51-135.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_16-59-51-135.jpg", 
+      note: "2024,June 3", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -466,8 +466,8 @@ export const sketches = [
     { 
       id: 52, 
       title: "2024,June4", 
-      image: "public/EYES/Picsart_25-07-17_17-00-23-869.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_17-00-23-869.jpg", 
+      note: "2024,June 4", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -476,8 +476,8 @@ export const sketches = [
     { 
       id: 53, 
       title: "2024,June5", 
-      image: "public/EYES/Picsart_25-07-17_17-00-55-422.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_17-00-55-422.jpg", 
+      note: "2024,June 5", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -486,8 +486,8 @@ export const sketches = [
     { 
       id: 54, 
       title: "2024,June6", 
-      image: "public/EYES/Picsart_25-07-17_17-01-38-003.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_17-01-38-003.jpg", 
+      note: "2024,June 6", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -496,8 +496,8 @@ export const sketches = [
     { 
       id: 55, 
       title: "2024,June7", 
-      image: "public/EYES/Picsart_25-07-17_17-02-31-660.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_17-02-31-660.jpg", 
+      note: "2024,June 7", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -506,8 +506,8 @@ export const sketches = [
     { 
       id: 56, 
       title: "2024,June8", 
-      image: "public/EYES/Picsart_25-07-17_17-04-11-284.jpg", 
-      note: "A portrait of emotions.", 
+      image: "/EYES/Picsart_25-07-17_17-04-11-284.jpg", 
+      note: "2024,June 8", 
       music: "/assets/music2.mp3",
       favorite: false,
       category: "eyes"
@@ -516,9 +516,9 @@ export const sketches = [
     { 
       id: 57, 
       title: "2024,June9", 
-      image: "public/EYES/Picsart_25-07-17_17-07-17-250.jpg", 
-      note: "A portrait of emotions.", 
-      music: "/assets/music2.mp3",
+      image: "/EYES/Picsart_25-07-17_17-07-17-250.jpg", 
+      note: "2024,June 9", 
+      music: "/audio/aud1.mp3",
       favorite: false,
       category: "eyes"
     }

@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+// src/pages/Favorites.jsx
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-import { sketches } from "./sketchesData";
+import { useNavigate } from "react-router-dom";
+import { sketches } from "./sketchesData.js";
 
-// Red Leaf component with animation
+
+// small animated leaf component
 const RedLeaf = ({ style }) => {
   const variants = {
     falling: {
@@ -11,11 +13,7 @@ const RedLeaf = ({ style }) => {
       x: [0, Math.random() * 200 - 100],
       rotate: [0, Math.random() * 360],
       opacity: [1, 0],
-      transition: {
-        duration: 5 + Math.random() * 10,
-        repeat: Infinity,
-        ease: "linear"
-      }
+      transition: { duration: 5 + Math.random() * 10, repeat: Infinity, ease: "linear" }
     }
   };
 
@@ -33,8 +31,8 @@ const RedLeaf = ({ style }) => {
         backgroundImage: "url('public/images/clipart19125 (1).png')",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        width: "3000000px",
-        height: "3000000px",
+        width: "40px",
+        height: "40px",
         ...style
       }}
     />
@@ -45,10 +43,11 @@ const Favorites = () => {
   const navigate = useNavigate();
   const favoriteSketches = sketches.filter((sketch) => sketch.favorite);
   const [activeIndex, setActiveIndex] = useState(0);
+  const audioRef = useRef(null);
   const [leaves, setLeaves] = useState([]);
 
   useEffect(() => {
-    // Create 10-15 red leaves with random properties
+    // generate visual leaves
     const newLeaves = Array.from({ length: 10 + Math.floor(Math.random() * 5) }).map((_, i) => ({
       id: i,
       size: 20 + Math.random() * 30,
@@ -59,9 +58,33 @@ const Favorites = () => {
     setLeaves(newLeaves);
   }, []);
 
+  // Play the music specific to the active favorite image
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+
+    const musicUrl = favoriteSketches[activeIndex]?.music;
+    if (musicUrl) {
+      const audio = new Audio(musicUrl);
+      audio.loop = true;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) playPromise.catch((err) => console.warn("Autoplay prevented:", err));
+      audioRef.current = audio;
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
+
   return (
     <div className="slider-container">
-      {/* Back Button */}
       <motion.button
         className="back-button"
         onClick={() => navigate(-1)}
@@ -73,7 +96,7 @@ const Favorites = () => {
         ← Back
       </motion.button>
 
-      {/* Falling Red Leaves */}
+      {/* Falling leaves */}
       {leaves.map((leaf) => (
         <RedLeaf
           key={leaf.id}
@@ -86,16 +109,6 @@ const Favorites = () => {
           }}
         />
       ))}
-
-      {/* Decorative elements */}
-      <div className="flower" key="flower1"></div>
-      <div className="flower" key="flower2"></div>
-      <div className="flower" key="flower3"></div>
-      <div className="flower" key="flower4"></div>
-      <div className="flower" key="flower5"></div>
-      <div className="flower" key="flower6"></div>
-      <div className="snowflake" key="snow1"></div>
-      <div className="snowflake" key="snow2"></div>
 
       <h2>My Favorite Sketches</h2>
       <div className="slider-images">

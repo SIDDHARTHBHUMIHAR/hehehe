@@ -57,6 +57,11 @@ const Home = () => {
       padding: '2rem',
       overflow: 'hidden'
     }}>
+      {/* Pencil Drawing Elements */}
+      <div className="pencil-line"></div>
+      <div className="pencil-line"></div>
+      <div className="graphic-blob"></div>
+
       {/* Floating Hearts */}
       {hearts.map((heart) => (
         <motion.div
@@ -96,20 +101,7 @@ const Home = () => {
       >
         <Link 
           to="/categories" 
-          style={{
-            display: "inline-block",
-            padding: "12px 24px",
-            backgroundColor: "#4a4a4a",
-            color: "white",
-            borderRadius: "30px",
-            textDecoration: "none",
-            marginTop: "20px",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "1rem",
-            fontWeight: "500",
-            boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
-          }}
+          className="cta-button"
         >
           View Categories
         </Link>
