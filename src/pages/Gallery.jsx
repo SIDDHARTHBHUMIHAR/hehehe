@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 import { useState, useEffect } from "react";
+import { sketchSounds } from "../utils/sounds.js";
 
 const Gallery = () => {
   const [notes, setNotes] = useState(() => {
@@ -14,6 +15,12 @@ const Gallery = () => {
     }
   });
   const [selectedSketch, setSelectedSketch] = useState(null);
+  const [filter, setFilter] = useState('all');
+  const [filteredSketches, setFilteredSketches] = useState(sketches);
+  const [isShuffling, setIsShuffling] = useState(false);
+
+  // Filter categories from sketches
+  const categories = ['all', ...new Set(sketches.map(sketch => sketch.category || 'general'))];
 
   useEffect(() => {
     try {
@@ -22,6 +29,22 @@ const Gallery = () => {
       console.warn("Could not save notes", e);
     }
   }, [notes]);
+
+  // Handle filter change
+  const handleFilter = (category) => {
+    sketchSounds.play('pageTurn');
+    setIsShuffling(true);
+    
+    setTimeout(() => {
+      if (category === 'all') {
+        setFilteredSketches(sketches);
+      } else {
+        setFilteredSketches(sketches.filter(sketch => sketch.category === category));
+      }
+      setFilter(category);
+      setIsShuffling(false);
+    }, 300);
+  };
 
   function openAside(sketch) {
     setSelectedSketch(sketch);
@@ -39,24 +62,47 @@ const Gallery = () => {
     <div className="gallery">
       <motion.button
         className="back-button"
-        onClick={() => window.history.back()}
+        onClick={() => {
+          sketchSounds.play('click');
+          window.history.back();
+        }}
         whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300 }}
+        onMouseEnter={() => sketchSounds.play('hover')}
       >
         ← Back
       </motion.button>
 
-      <h2>My Sketches</h2>
+      <h2 className="pencil-stroke">My Sketches</h2>
+
+      {/* Gallery Filters */}
+      <div className="gallery-filters">
+        {categories.map(category => (
+          <button
+            key={category}
+            className={`filter-btn ${filter === category ? 'active' : ''}`}
+            onClick={() => handleFilter(category)}
+            onMouseEnter={() => sketchSounds.play('hover')}
+          >
+            {category === 'all' ? 'All Sketches' : category.charAt(0).toUpperCase() + category.slice(1)}
+          </button>
+        ))}
+      </div>
 
       <div className="grid">
-        {sketches.map((sketch) => (
-          // Wrap only the clickable parts (image + note) in Link.
-          <div key={sketch.id} className="grid-item">
+        {filteredSketches.map((sketch) => (
+          <div 
+            key={sketch.id} 
+            className={`grid-item draw-effect ${isShuffling ? 'shuffling' : ''}`}
+            style={{ animationDelay: `${sketch.id * 0.05}s` }}
+          >
             <Link
               to={`/sketch/${sketch.id}`}
-              className="grid-link"
+              className="grid-link draw-on-hover"
               aria-label={`Open ${sketch.title}`}
+              onClick={() => sketchSounds.play('click')}
+              onMouseEnter={() => sketchSounds.play('hover')}
             >
               <img src={sketch.image} alt={sketch.title} />
               <p>{sketch.note}</p>
@@ -68,6 +114,7 @@ const Gallery = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   openAside(sketch);
+                  sketchSounds.play('click');
                 }}
                 style={{
                   padding: "8px 12px",
@@ -77,6 +124,7 @@ const Gallery = () => {
                   color: "#fff",
                   cursor: "pointer"
                 }}
+                onMouseEnter={() => sketchSounds.play('hover')}
               >
                 Add/View Note
               </button>
@@ -113,8 +161,12 @@ const Gallery = () => {
           >
             <h3 style={{ margin: 0 }}>{selectedSketch.title}</h3>
             <button
-              onClick={closeAside}
+              onClick={() => {
+                closeAside();
+                sketchSounds.play('click');
+              }}
               style={{ background: "transparent", border: "none", fontSize: 20 }}
+              onMouseEnter={() => sketchSounds.play('hover')}
             >
               ✕
             </button>
@@ -137,12 +189,14 @@ const Gallery = () => {
               borderRadius: 8,
               border: "1px solid #ddd",
             }}
+            onFocus={() => sketchSounds.play('hover')}
           />
 
           <div style={{ marginTop: "auto", display: "flex", gap: 8 }}>
             <button
               onClick={() => {
                 closeAside();
+                sketchSounds.play('click');
               }}
               style={{
                 flex: 1,
@@ -152,12 +206,14 @@ const Gallery = () => {
                 background: "#4a4a4a",
                 color: "#fff",
               }}
+              onMouseEnter={() => sketchSounds.play('hover')}
             >
               Done
             </button>
             <button
               onClick={() => {
                 updateNote(selectedSketch.id, "");
+                sketchSounds.play('click');
               }}
               style={{
                 flex: 1,
@@ -167,6 +223,7 @@ const Gallery = () => {
                 background: "#e44",
                 color: "#fff",
               }}
+              onMouseEnter={() => sketchSounds.play('hover')}
             >
               Clear
             </button>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom"; // Fixed import
+import { Link, useNavigate } from "react-router-dom";
 
 const CategorySelector = () => {
   const navigate = useNavigate();
@@ -48,6 +48,15 @@ const CategorySelector = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <Link to="/eyes">EYES</Link>
+          </motion.button>
+
+          {/* NEW: Message Box Category */}
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <Link to="/message-box">MESSAGE BOX</Link>
           </motion.button>
         </div>
       </motion.div>
