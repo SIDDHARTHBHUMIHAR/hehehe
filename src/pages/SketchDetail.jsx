@@ -44,8 +44,12 @@ const SketchDetail = () => {
       </motion.button>
 
       <div className="animated-background"></div>
-      <img src={sketch.image} alt={sketch.title} />
-      <p>{sketch.note}</p>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', boxSizing: 'border-box' }}>
+        <div className="artwork-container" style={{ width: '100%', height: '72vh', maxHeight: '88vh' }}>
+          <img src={sketch.image} alt={sketch.title} className="responsive-sketch" />
+        </div>
+        <p style={{ marginTop: '18px' }}>{sketch.note}</p>
+      </div>
       {/* Play/Pause UI removed — music auto-plays on opening the detail */}
     </div>
   );

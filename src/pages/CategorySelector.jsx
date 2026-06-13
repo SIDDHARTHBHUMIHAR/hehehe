@@ -30,24 +30,27 @@ const CategorySelector = () => {
             whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
+            onClick={() => navigate('/gallery')}
           >
-            <Link to="/gallery">ALL SKETCHES</Link>
+            ALL SKETCHES
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
+            onClick={() => navigate('/favorites')}
           >
-            <Link to="/favorites">FAVORITES</Link>
+            FAVORITES
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
+            onClick={() => navigate('/eyes')}
           >
-            <Link to="/eyes">EYES</Link>
+            EYES
           </motion.button>
 
           {/* NEW: Message Box Category */}
@@ -55,8 +58,9 @@ const CategorySelector = () => {
             whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
+            onClick={() => navigate('/message-box')}
           >
-            <Link to="/message-box">MESSAGE BOX</Link>
+            MESSAGE BOX
           </motion.button>
         </div>
       </motion.div>
