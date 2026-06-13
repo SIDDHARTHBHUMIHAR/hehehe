@@ -1,6 +1,6 @@
 // src/pages/Gallery.jsx
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 import { useState, useEffect } from "react";
 import { sketchSounds } from "../utils/sounds.js";
@@ -30,20 +30,23 @@ const Gallery = () => {
     }
   }, [notes]);
 
+  const navigate = useNavigate();
+
   // Handle filter change
   const handleFilter = (category) => {
     sketchSounds.play('pageTurn');
     setIsShuffling(true);
-    
+
+    if (category === 'all') {
+      setFilteredSketches(sketches);
+    } else {
+      setFilteredSketches(sketches.filter(sketch => sketch.category === category));
+    }
+    setFilter(category);
+
     setTimeout(() => {
-      if (category === 'all') {
-        setFilteredSketches(sketches);
-      } else {
-        setFilteredSketches(sketches.filter(sketch => sketch.category === category));
-      }
-      setFilter(category);
       setIsShuffling(false);
-    }, 300);
+    }, 150);
   };
 
   function openAside(sketch) {
@@ -64,7 +67,7 @@ const Gallery = () => {
         className="back-button"
         onClick={() => {
           sketchSounds.play('click');
-          window.history.back();
+          navigate(-1);
         }}
         whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
         whileTap={{ scale: 0.95 }}
@@ -104,7 +107,9 @@ const Gallery = () => {
               onClick={() => sketchSounds.play('click')}
               onMouseEnter={() => sketchSounds.play('hover')}
             >
-              <img src={sketch.image} alt={sketch.title} />
+              <div className="artwork-container" style={{width: '100%', height: '220px'}}>
+                <img src={sketch.image} alt={sketch.title} className="responsive-sketch" />
+              </div>
               <p>{sketch.note}</p>
             </Link>
 
@@ -172,11 +177,14 @@ const Gallery = () => {
             </button>
           </div>
 
-          <img
-            src={selectedSketch.image}
-            alt={selectedSketch.title}
-            style={{ width: "100%", borderRadius: 8, border: "6px solid white" }}
-          />
+          <div style={{ width: "100%", borderRadius: 8, border: "6px solid white", overflow: 'hidden' }}>
+            <img
+              src={selectedSketch.image}
+              alt={selectedSketch.title}
+              className="responsive-sketch"
+              style={{ borderRadius: 8, display: 'block' }}
+            />
+          </div>
 
           <label style={{ fontWeight: 600 }}>Your note</label>
           <textarea

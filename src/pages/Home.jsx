@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Home = () => {
@@ -44,6 +44,8 @@ const Home = () => {
     }));
 
   const [hearts] = useState(() => generateHearts(30));
+
+  const navigate = useNavigate();
 
   return (
     <div className="homepage" style={{
@@ -94,18 +96,16 @@ const Home = () => {
         Every stroke tells a story. Explore my sketches below.
       </p>
       
-      <motion.div
+      <motion.button
+        onClick={() => navigate('/categories')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        style={{ position: 'relative', zIndex: 2 }}
+        style={{ position: 'relative', zIndex: 2, border: 'none', padding: 0, background: 'transparent' }}
       >
-        <Link 
-          to="/categories" 
-          className="cta-button"
-        >
+        <span className="cta-button" style={{ display: 'inline-block' }}>
           View Categories
-        </Link>
-      </motion.div>
+        </span>
+      </motion.button>
     </div>
   );
 };

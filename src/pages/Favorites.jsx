@@ -1,11 +1,12 @@
 // src/pages/Favorites.jsx
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 import { useState } from "react";
 import { sketchSounds } from "../utils/sounds.js";
 
 const Favorites = () => {
+  const navigate = useNavigate();
   const favoriteSketches = sketches.filter((sketch) => sketch.favorite);
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -14,7 +15,7 @@ const Favorites = () => {
       <div className="gallery">
         <motion.button
           className="back-button"
-          onClick={() => { sketchSounds.play('click'); window.history.back(); }}
+          onClick={() => { sketchSounds.play('click'); navigate(-1); }}
           whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
           whileTap={{ scale: 0.95 }}
           onMouseEnter={() => sketchSounds.play('hover')}
@@ -34,7 +35,7 @@ const Favorites = () => {
       {/* Back Button */}
       <motion.button
         className="back-button"
-        onClick={() => { sketchSounds.play('click'); window.history.back(); }}
+        onClick={() => { sketchSounds.play('click'); navigate(-1); }}
         whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300 }}
@@ -91,7 +92,7 @@ const Favorites = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "14px",
-                width: "clamp(130px, 20vw, 210px)",
+                width: "clamp(150px, 28vw, 260px)",
               }}
               onMouseEnter={() => { setHoveredId(sketch.id); sketchSounds.play('hover'); }}
               onMouseLeave={() => setHoveredId(null)}
@@ -122,18 +123,14 @@ const Favorites = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <img
-                    src={sketch.image}
-                    alt={sketch.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center top",
-                      filter: "sepia(0.08) brightness(1.03) contrast(1.05)",
-                      transition: "filter 0.4s ease",
-                    }}
-                  />
+                  <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+                    <img
+                      src={sketch.image}
+                      alt={sketch.title}
+                      className="responsive-sketch"
+                      style={{ filter: "sepia(0.08) brightness(1.03) contrast(1.05)" }}
+                    />
+                  </div>
 
                   {/* hover coral tint */}
                   <motion.div

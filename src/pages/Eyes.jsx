@@ -12,7 +12,7 @@ const Eyes = () => {
 
   // PAGE-WIDE music (Option B)
   // Put the audio file under public/assets/ so it's served as "/assets/eyes-theme.mp3"
-  const pageMusic = "public/audio/aud1.mp3";
+  const pageMusic = "/audio/eyes 5.mp3";
 
   useEffect(() => {
     // cleanup previous audio if any
@@ -31,7 +31,7 @@ const Eyes = () => {
       const audio = new Audio(musicUrl);
       audio.loop = true;
       // optional: adjust default volume
-      // audio.volume = 0.65;
+      audio.volume = 0.5;
 
       const playPromise = audio.play();
       if (playPromise !== undefined) {
@@ -50,8 +50,8 @@ const Eyes = () => {
         audioRef.current = null;
       }
     };
-    // run effect also when currentIndex changes so the music resets if you want that behavior
-  }, [currentIndex]);
+    // Run only once on mount, so the same page music plays across the whole category.
+  }, []);
 
   // Colors & visuals (kept from your design)
   const colors = {
@@ -174,15 +174,20 @@ const Eyes = () => {
               maxWidth: "700px",
               height: "25vh",
               maxHeight: "500px",
-              backgroundImage: `url(${eyeSketches[currentIndex]?.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
               borderRadius: "20px",
               boxShadow: "0 25px 50px -12px rgba(164, 110, 150, 0.2)",
               zIndex: 3,
-              border: "8px solid white"
+              border: "8px solid white",
+              overflow: 'hidden',
             }}
-          />
+          >
+            <img
+              src={eyeSketches[currentIndex]?.image}
+              alt={eyeSketches[currentIndex]?.title || 'eye sketch'}
+              className="responsive-sketch"
+              style={{ width: '100%', height: '100%', display: 'block' }}
+            />
+          </motion.div>
         </AnimatePresence>
 
         {eyeSketches.length > 1 && (
@@ -193,9 +198,6 @@ const Eyes = () => {
                 maxWidth: "350px",
                 height: "20vh",
                 maxHeight: "350px",
-                backgroundImage: `url(${eyeSketches[(currentIndex - 1 + eyeSketches.length) % eyeSketches.length]?.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
                 borderRadius: "15px",
                 boxShadow: "0 15px 30px -8px rgba(164, 110, 150, 0.2)",
                 position: "absolute",
@@ -203,20 +205,26 @@ const Eyes = () => {
                 bottom: "5%",
                 zIndex: 2,
                 border: "6px solid white",
-                opacity: 0.9
+                opacity: 0.9,
+                overflow: 'hidden',
+                cursor: 'pointer'
               }}
               whileHover={{ scale: 1.03 }}
               onClick={() => setCurrentIndex((prev) => (prev - 1 + eyeSketches.length) % eyeSketches.length)}
-            />
+            >
+              <img
+                src={eyeSketches[(currentIndex - 1 + eyeSketches.length) % eyeSketches.length]?.image}
+                alt={eyeSketches[(currentIndex - 1 + eyeSketches.length) % eyeSketches.length]?.title || 'prev'}
+                className="responsive-sketch"
+                style={{ width: '100%', height: '100%', display: 'block' }}
+              />
+            </motion.div>
             <motion.div
               style={{
                 width: "50vw",
                 maxWidth: "350px",
                 height: "20vh",
                 maxHeight: "350px",
-                backgroundImage: `url(${eyeSketches[(currentIndex + 1) % eyeSketches.length]?.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
                 borderRadius: "15px",
                 boxShadow: "0 15px 30px -8px rgba(164, 110, 150, 0.2)",
                 position: "absolute",
@@ -224,11 +232,20 @@ const Eyes = () => {
                 bottom: "5%",
                 zIndex: 2,
                 border: "6px solid white",
-                opacity: 0.9
+                opacity: 0.9,
+                overflow: 'hidden',
+                cursor: 'pointer'
               }}
               whileHover={{ scale: 1.03 }}
               onClick={() => setCurrentIndex((prev) => (prev + 1) % eyeSketches.length)}
-            />
+            >
+              <img
+                src={eyeSketches[(currentIndex + 1) % eyeSketches.length]?.image}
+                alt={eyeSketches[(currentIndex + 1) % eyeSketches.length]?.title || 'next'}
+                className="responsive-sketch"
+                style={{ width: '100%', height: '100%', display: 'block' }}
+              />
+            </motion.div>
           </>
         )}
       </div>
