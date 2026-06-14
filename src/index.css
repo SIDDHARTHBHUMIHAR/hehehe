@@ -608,21 +608,25 @@ h2 {
   transition: transform 320ms ease, filter 260ms ease;
 }
 
-.favorite-star {
+.favorite-expression {
   position: absolute;
-  top: 7%;
-  right: 2%;
+  top: 5%;
+  right: 4%;
   z-index: 4;
-  padding: 7px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  display: grid;
+  place-items: center;
+  width: clamp(38px, 5vw, 50px);
+  height: clamp(38px, 5vw, 50px);
+  border: 3px solid rgba(255, 255, 255, 0.86);
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--rose), var(--coral));
-  color: white;
-  box-shadow: 0 10px 24px rgba(201, 95, 115, 0.24);
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow:
+    0 12px 26px rgba(47, 42, 36, 0.14),
+    inset 0 0 0 1px rgba(201, 95, 115, 0.12);
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  line-height: 1;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  backdrop-filter: blur(10px);
 }
 
 .favorite-circle-link p {
@@ -655,6 +659,13 @@ h2 {
 .favorite-circle-link:hover img {
   transform: scale(1.04);
   filter: sepia(0) brightness(1.06) contrast(1.08);
+}
+
+.favorite-circle-link:hover .favorite-expression {
+  transform: translateY(-4px) rotate(8deg) scale(1.08);
+  box-shadow:
+    0 16px 30px rgba(47, 42, 36, 0.18),
+    inset 0 0 0 1px rgba(201, 95, 115, 0.18);
 }
 
 .empty-state {
@@ -1195,11 +1206,13 @@ h2 {
     margin-top: 0;
   }
 
-  .favorite-star {
+  .favorite-expression {
     top: 4%;
     right: -4px;
-    padding: 6px 9px;
-    font-size: 0.6rem;
+    width: 34px;
+    height: 34px;
+    border-width: 2px;
+    font-size: 1.05rem;
   }
 
   .favorite-circle-link p {

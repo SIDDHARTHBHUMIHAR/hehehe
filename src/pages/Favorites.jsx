@@ -3,6 +3,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 import { sketchSounds } from "../utils/sounds.js";
 
+const expressionEmojis = ["😊", "🥰", "✨", "💖", "🌸", "😌"];
+
+const getExpressionEmoji = (sketch, index) => {
+  const text = `${sketch.title || ""} ${sketch.note || ""}`.toLowerCase();
+
+  if (text.includes("badmosh")) return "😎";
+  if (text.includes("hmmm")) return "🤔";
+  if (text.includes("special")) return "✨";
+  if (text.includes("vote")) return "🗳️";
+  if (text.includes("bindi")) return "🌙";
+  if (text.includes("temple")) return "🙏";
+  if (text.includes("saari") || text.includes("saree")) return "💃";
+  if (text.includes("black")) return "🖤";
+  if (text.includes("blink")) return "😉";
+  if (text.includes("eyes")) return "👀";
+
+  return expressionEmojis[index % expressionEmojis.length];
+};
+
 const Favorites = () => {
   const navigate = useNavigate();
   const favoriteSketches = sketches.filter((sketch) => sketch.favorite);
@@ -68,7 +87,13 @@ const Favorites = () => {
                     className="responsive-sketch"
                   />
                 </div>
-                <span className="favorite-star">Favorite</span>
+                <span
+                  className="favorite-expression"
+                  aria-label="Expression"
+                  title="Expression"
+                >
+                  {getExpressionEmoji(sketch, index)}
+                </span>
                 <p>{sketch.note}</p>
               </Link>
             </Motion.article>
