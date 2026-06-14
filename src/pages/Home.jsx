@@ -5,19 +5,20 @@ import { useState } from "react";
 const Home = () => {
   const navigate = useNavigate();
 
-  const [floatingMarks] = useState(() =>
-    [...Array(14)].map((_, i) => ({
-      id: `mark-${i}`,
+  const [floatingHearts] = useState(() =>
+    [...Array(24)].map((_, i) => ({
+      id: `heart-${i}`,
       initial: {
         opacity: 0,
         x: Math.random() * window.innerWidth,
         y: window.innerHeight + Math.random() * 80,
       },
       animate: {
-        opacity: [0.08, 0.28, 0],
-        y: `-${Math.random() * 500 + 120}px`,
-        x: `${Math.random() * 180 - 90}px`,
-        rotate: Math.random() * 50 - 25,
+        opacity: [0, 0.52, 0],
+        y: `-${Math.random() * 560 + 140}px`,
+        x: `${Math.random() * 210 - 105}px`,
+        rotate: Math.random() * 70 - 35,
+        scale: [0.72, 1.08, 0.86],
       },
       transition: {
         duration: Math.random() * 10 + 9,
@@ -29,6 +30,8 @@ const Home = () => {
         position: "fixed",
         zIndex: 1,
         pointerEvents: "none",
+        width: `${Math.random() * 12 + 12}px`,
+        height: `${Math.random() * 12 + 12}px`,
       },
     }))
   );
@@ -38,14 +41,20 @@ const Home = () => {
       <div className="pencil-line"></div>
       <div className="pencil-line"></div>
 
-      {floatingMarks.map((mark) => (
+      <div className="home-book-doodle" aria-hidden="true">
+        <span />
+      </div>
+      <div className="home-pencil-doodle pencil-one" aria-hidden="true" />
+      <div className="home-pencil-doodle pencil-two" aria-hidden="true" />
+
+      {floatingHearts.map((heart) => (
         <Motion.div
-          key={mark.id}
-          className="floating-mark"
-          initial={mark.initial}
-          animate={mark.animate}
-          transition={mark.transition}
-          style={mark.style}
+          key={heart.id}
+          className="floating-heart"
+          initial={heart.initial}
+          animate={heart.animate}
+          transition={heart.transition}
+          style={heart.style}
         />
       ))}
 
