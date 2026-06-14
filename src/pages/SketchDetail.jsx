@@ -45,7 +45,7 @@ const SketchDetail = () => {
 
       <div className="animated-background"></div>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', boxSizing: 'border-box' }}>
-        <div className="artwork-container" style={{ width: '100%', height: '72vh', maxHeight: '88vh' }}>
+        <div className="artwork-container" style={{ width: '100%' }}>
           <img src={sketch.image} alt={sketch.title} className="responsive-sketch" />
         </div>
         <p style={{ marginTop: '18px' }}>{sketch.note}</p>
