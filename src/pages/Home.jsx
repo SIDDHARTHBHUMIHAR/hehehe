@@ -1,112 +1,78 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Home = () => {
-  // Heart animation configuration
-  const colors = {
-    heart: "#ff0000",
-    heartSecondary: "#ff6b8b",
-    heartTertiary: "#ff4757"
-  };
-
-  // Generate floating hearts
-  const generateHearts = (count) => 
-    [...Array(count)].map((_, i) => ({
-      id: `heart-${i}`,
-      initial: { 
-        opacity: 0,
-        x: Math.random() * window.innerWidth,
-        y: window.innerHeight + Math.random() * 100
-      },
-      animate: { 
-        opacity: [0.2, 0.7, 0],
-        y: `-${Math.random() * 500 + 100}px`,
-        x: `${Math.random() * 200 - 100}px`,
-        rotate: Math.random() * 360,
-        scale: [0.8, 1.2, 0.9]
-      },
-      transition: {
-        duration: Math.random() * 10 + 8,
-        repeat: Infinity,
-        repeatDelay: Math.random() * 3,
-        ease: "easeOut"
-      },
-      style: {
-        fontSize: `${Math.random() * 20 + 15}px`,
-        color: [colors.heart, colors.heartSecondary, colors.heartTertiary][
-          Math.floor(Math.random() * 3)
-        ],
-        position: 'fixed',
-        zIndex: 1,
-        pointerEvents: 'none'
-      }
-    }));
-
-  const [hearts] = useState(() => generateHearts(30));
-
   const navigate = useNavigate();
 
-  return (
-    <div className="homepage" style={{
-      position: 'relative',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      padding: '2rem',
-      overflow: 'hidden'
-    }}>
-      {/* Pencil Drawing Elements */}
-      <div className="pencil-line"></div>
-      <div className="pencil-line"></div>
-      <div className="graphic-blob"></div>
+  const [floatingMarks] = useState(() =>
+    [...Array(14)].map((_, i) => ({
+      id: `mark-${i}`,
+      initial: {
+        opacity: 0,
+        x: Math.random() * window.innerWidth,
+        y: window.innerHeight + Math.random() * 80,
+      },
+      animate: {
+        opacity: [0.08, 0.28, 0],
+        y: `-${Math.random() * 500 + 120}px`,
+        x: `${Math.random() * 180 - 90}px`,
+        rotate: Math.random() * 50 - 25,
+      },
+      transition: {
+        duration: Math.random() * 10 + 9,
+        repeat: Infinity,
+        repeatDelay: Math.random() * 4,
+        ease: "easeOut",
+      },
+      style: {
+        position: "fixed",
+        zIndex: 1,
+        pointerEvents: "none",
+      },
+    }))
+  );
 
-      {/* Floating Hearts */}
-      {hearts.map((heart) => (
-        <motion.div
-          key={heart.id}
-          initial={heart.initial}
-          animate={heart.animate}
-          transition={heart.transition}
-          style={heart.style}
-        >
-          ❤
-        </motion.div>
+  return (
+    <main className="homepage">
+      <div className="pencil-line"></div>
+      <div className="pencil-line"></div>
+
+      {floatingMarks.map((mark) => (
+        <Motion.div
+          key={mark.id}
+          className="floating-mark"
+          initial={mark.initial}
+          animate={mark.animate}
+          transition={mark.transition}
+          style={mark.style}
+        />
       ))}
 
-      <h1 style={{
-        fontSize: '2.5rem',
-        marginBottom: '1rem',
-        position: 'relative',
-        zIndex: 2
-      }}>
-        Welcome to My Art World
-      </h1>
-      
-      <p style={{
-        fontSize: '1.2rem',
-        marginBottom: '2rem',
-        maxWidth: '600px',
-        position: 'relative',
-        zIndex: 2
-      }}>
-        Every stroke tells a story. Explore my sketches below.
-      </p>
-      
-      <motion.button
-        onClick={() => navigate('/categories')}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        style={{ position: 'relative', zIndex: 2, border: 'none', padding: 0, background: 'transparent' }}
+      <Motion.section
+        className="home-hero"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
       >
-        <span className="cta-button" style={{ display: 'inline-block' }}>
-          View Categories
-        </span>
-      </motion.button>
-    </div>
+        <span className="home-kicker">Personal sketch archive</span>
+        <h1>Welcome to My Art World</h1>
+        <p>
+          Every stroke tells a story. Explore sketches, favorite moments, eye
+          studies, and quiet notes from the artist's journey.
+        </p>
+      </Motion.section>
+
+      <Motion.button
+        type="button"
+        className="hero-action"
+        onClick={() => navigate("/categories")}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+      >
+        Open Sketchbook
+      </Motion.button>
+    </main>
   );
 };
 

@@ -1,70 +1,73 @@
-import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+const categories = [
+  {
+    title: "All Sketches",
+    detail: "Browse the full sketchbook",
+    path: "/gallery",
+  },
+  {
+    title: "Favorites",
+    detail: "The pieces worth pausing for",
+    path: "/favorites",
+  },
+  {
+    title: "Eyes",
+    detail: "A focused study collection",
+    path: "/eyes",
+  },
+  {
+    title: "Message Box",
+    detail: "Short notes and reflections",
+    path: "/message-box",
+  },
+];
 
 const CategorySelector = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="category-page">
-      {/* Back Button */}
-      <motion.button
+    <main className="category-page">
+      <Motion.button
+        type="button"
         className="back-button"
         onClick={() => navigate(-1)}
-        whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        ← Back
-      </motion.button>
+        Back
+      </Motion.button>
 
-      {/* Main Content */}
-      <motion.div 
+      <Motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="category-buttons"
+        transition={{ duration: 0.65 }}
+        className="category-shell"
       >
+        <span className="section-kicker">Choose a collection</span>
         <h2>Explore My Art</h2>
-        <div className="button-group">
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate('/gallery')}
-          >
-            ALL SKETCHES
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate('/favorites')}
-          >
-            FAVORITES
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate('/eyes')}
-          >
-            EYES
-          </motion.button>
 
-          {/* NEW: Message Box Category */}
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate('/message-box')}
-          >
-            MESSAGE BOX
-          </motion.button>
+        <div className="button-group">
+          {categories.map((category, index) => (
+            <Motion.button
+              type="button"
+              key={category.path}
+              className="category-card"
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              onClick={() => navigate(category.path)}
+              style={{ animationDelay: `${index * 0.06}s` }}
+            >
+              <span>{category.title}</span>
+              <small>{category.detail}</small>
+            </Motion.button>
+          ))}
         </div>
-      </motion.div>
-    </div>
+      </Motion.section>
+    </main>
   );
 };
 
