@@ -39,35 +39,41 @@ const Favorites = () => {
           Add <code>favorite: true</code> to sketches you want to feature here.
         </div>
       ) : (
-        <div className="grid">
+        <section className="favorites-orbit" aria-label="Favorite sketches">
           {favoriteSketches.map((sketch, index) => (
             <Motion.article
               key={sketch.id}
-              className="grid-item draw-effect favorite-card"
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.35 }}
+              className="favorite-circle-card"
+              initial={{ opacity: 0, y: 24, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                delay: index * 0.06,
+                type: "spring",
+                stiffness: 220,
+                damping: 18,
+              }}
             >
               <Link
                 to={`/sketch/${sketch.id}`}
-                className="grid-link draw-on-hover"
+                className="favorite-circle-link"
                 aria-label={`Open ${sketch.title}`}
                 onClick={() => sketchSounds.play("click")}
                 onMouseEnter={() => sketchSounds.play("hover")}
               >
-                <span className="favorite-ribbon">Favorite</span>
-                <div className="artwork-container">
+                <span className="favorite-glow" />
+                <div className="favorite-circle-frame">
                   <img
                     src={sketch.image}
                     alt={sketch.title}
                     className="responsive-sketch"
                   />
                 </div>
+                <span className="favorite-star">Favorite</span>
                 <p>{sketch.note}</p>
               </Link>
             </Motion.article>
           ))}
-        </div>
+        </section>
       )}
     </main>
   );

@@ -515,6 +515,148 @@ h2 {
   text-transform: uppercase;
 }
 
+.favorites-page {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(201, 95, 115, 0.14), transparent 26%),
+    radial-gradient(circle at 82% 22%, rgba(95, 142, 170, 0.12), transparent 28%),
+    linear-gradient(135deg, #fffaf1 0%, #f6eee4 54%, #f0f5ef 100%);
+}
+
+.favorites-orbit {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(26px, 4.5vw, 58px);
+  width: min(1280px, 100%);
+  margin: 42px auto 0;
+  padding: clamp(10px, 3vw, 28px) 0 36px;
+}
+
+.favorite-circle-card {
+  width: clamp(166px, 22vw, 270px);
+  min-width: 0;
+}
+
+.favorite-circle-card:nth-child(3n + 2) {
+  margin-top: clamp(14px, 3vw, 42px);
+}
+
+.favorite-circle-card:nth-child(3n) {
+  margin-top: clamp(4px, 2vw, 24px);
+}
+
+.favorite-circle-link {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.favorite-glow {
+  position: absolute;
+  top: 8%;
+  width: 82%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(201, 95, 115, 0.24), transparent 62%),
+    radial-gradient(circle at 70% 24%, rgba(95, 142, 170, 0.18), transparent 45%);
+  filter: blur(12px);
+  opacity: 0.72;
+  transform: scale(0.92);
+  transition: transform 240ms ease, opacity 240ms ease;
+}
+
+.favorite-circle-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: clamp(8px, 1.4vw, 14px);
+  overflow: hidden;
+  border: clamp(7px, 1.3vw, 12px) solid #fff;
+  border-radius: 999px;
+  background:
+    linear-gradient(#fffaf3, #f7efe4) padding-box,
+    conic-gradient(from 140deg, var(--rose), #e9c46a, var(--sage), var(--sky), var(--rose)) border-box;
+  box-shadow:
+    0 18px 44px rgba(47, 42, 36, 0.16),
+    0 0 0 7px rgba(255, 255, 255, 0.46),
+    0 0 0 11px rgba(201, 95, 115, 0.09);
+  transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
+}
+
+.favorite-circle-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: 2;
+  border: 1px dashed rgba(47, 42, 36, 0.18);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.favorite-circle-frame img {
+  border-radius: 999px;
+  filter: sepia(0.08) brightness(1.02) contrast(1.04);
+  transition: transform 320ms ease, filter 260ms ease;
+}
+
+.favorite-star {
+  position: absolute;
+  top: 7%;
+  right: 2%;
+  z-index: 4;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rose), var(--coral));
+  color: white;
+  box-shadow: 0 10px 24px rgba(201, 95, 115, 0.24);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.favorite-circle-link p {
+  width: min(100%, 250px);
+  margin: 4px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(47, 42, 36, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 12px 28px rgba(47, 42, 36, 0.08);
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.favorite-circle-link:hover .favorite-glow {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.favorite-circle-link:hover .favorite-circle-frame {
+  transform: translateY(-8px) rotate(-2deg);
+  box-shadow:
+    0 26px 70px rgba(47, 42, 36, 0.2),
+    0 0 0 8px rgba(255, 255, 255, 0.62),
+    0 0 0 15px rgba(201, 95, 115, 0.13);
+}
+
+.favorite-circle-link:hover img {
+  transform: scale(1.04);
+  filter: sepia(0) brightness(1.06) contrast(1.08);
+}
+
 .empty-state {
   position: relative;
   z-index: 2;
@@ -1039,6 +1181,30 @@ h2 {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .favorites-orbit {
+    gap: 30px 18px;
+  }
+
+  .favorite-circle-card {
+    width: min(44vw, 190px);
+  }
+
+  .favorite-circle-card:nth-child(n) {
+    margin-top: 0;
+  }
+
+  .favorite-star {
+    top: 4%;
+    right: -4px;
+    padding: 6px 9px;
+    font-size: 0.6rem;
+  }
+
+  .favorite-circle-link p {
+    font-size: 1.18rem;
+    padding: 10px;
   }
 
   .message-grid {
