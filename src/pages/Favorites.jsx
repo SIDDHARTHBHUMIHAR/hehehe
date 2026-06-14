@@ -8,7 +8,7 @@ const expressionEmojis = ["😊", "🥰", "✨", "💖", "🌸", "😌"];
 const getExpressionEmoji = (sketch, index) => {
   const text = `${sketch.title || ""} ${sketch.note || ""}`.toLowerCase();
 
-  if (text.includes("badmosh")) return "😎";
+  if (text.includes("badmosh") || text.includes("angry")) return "👺";
   if (text.includes("hmmm")) return "🤔";
   if (text.includes("special")) return "✨";
   if (text.includes("vote")) return "🗳️";
