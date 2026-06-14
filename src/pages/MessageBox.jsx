@@ -1,16 +1,13 @@
 // src/pages/MessageBox.jsx
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { messages, formatDate } from "./messagesData.js";
-import { sketchSounds } from "../utils/sounds.js";
 
 const MessageBox = () => {
   const navigate = useNavigate();
   const [activeMessage, setActiveMessage] = useState(null);
   const [visibleMessages, setVisibleMessages] = useState([]);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
 
   // Initialize with 5-8 random messages on load
   useEffect(() => {
@@ -21,101 +18,35 @@ const MessageBox = () => {
     };
 
     setVisibleMessages(getRandomMessages());
-    
-    // Play a soft sound when entering message box
-    setTimeout(() => {
-      sketchSounds.play('hover');
-    }, 300);
 
-    // Cleanup audio on unmount
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
+    // nothing to cleanup for this silent page
+    return () => {};
   }, []);
 
-  // Handle music playback when activeMessage changes
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-      setIsPlaying(false);
-    }
-
-    if (activeMessage && activeMessage.music) {
-      const audio = new Audio(activeMessage.music);
-      audio.loop = true;
-      audio.volume = 0.5; // Set volume to 50% for background music
-      
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(err => {
-            console.warn("Audio autoplay prevented:", err);
-            setIsPlaying(false);
-          });
-      }
-      
-      audioRef.current = audio;
-    }
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, [activeMessage]);
+  // No audio on this page — messages are silent letter previews.
 
   const openMessage = (message) => {
-    sketchSounds.play('click');
     setActiveMessage(message);
   };
 
   const closeMessage = () => {
-    sketchSounds.play('click');
     setActiveMessage(null);
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-      setIsPlaying(false);
-    }
   };
 
   const toggleMusic = () => {
-    if (!audioRef.current) return;
-    
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => setIsPlaying(true))
-          .catch(err => console.warn("Audio play failed:", err));
-      }
-    }
-    sketchSounds.play('click');
+    // noop — music removed from this page
   };
 
   const getNextMessage = () => {
     const currentIndex = visibleMessages.findIndex(m => m.id === activeMessage?.id);
     const nextIndex = (currentIndex + 1) % visibleMessages.length;
     setActiveMessage(visibleMessages[nextIndex]);
-    sketchSounds.play('pageTurn');
   };
 
   const getPrevMessage = () => {
     const currentIndex = visibleMessages.findIndex(m => m.id === activeMessage?.id);
     const prevIndex = (currentIndex - 1 + visibleMessages.length) % visibleMessages.length;
     setActiveMessage(visibleMessages[prevIndex]);
-    sketchSounds.play('pageTurn');
   };
 
   // Heart animation configuration (similar to other pages)
@@ -178,7 +109,6 @@ const MessageBox = () => {
         whileHover={{ scale: 1.05, backgroundColor: "#ff6b6b" }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300 }}
-        onMouseEnter={() => sketchSounds.play('hover')}
         style={{ zIndex: 100 }}
       >
         ← Back
@@ -251,104 +181,25 @@ const MessageBox = () => {
       ))}
 
       {/* Message Pop-ups */}
-      <div style={{ position: "relative", minHeight: "60vh" }}>
-        <AnimatePresence>
-          {visibleMessages.map((message) => (
-            <motion.div
-              key={message.id}
-              initial={{ opacity: 0, scale: 0.8, rotate: Math.random() * 10 - 5 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1,
-                rotate: Math.random() * 4 - 2,
-                y: [0, -5, 0]
-              }}
-              exit={{ opacity: 0, scale: 0.5 }}
-              transition={{ 
-                duration: 0.5,
-                y: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-              whileHover={{ 
-                scale: 1.05, 
-                rotate: 0,
-                boxShadow: "0 15px 35px rgba(0,0,0,0.15)"
-              }}
-              onClick={() => openMessage(message)}
-              onMouseEnter={() => sketchSounds.play('hover')}
-              style={{
-                position: "absolute",
-                background: `linear-gradient(135deg, ${message.color}15, #ffffff)`,
-                border: `2px solid ${message.color}40`,
-                borderRadius: "15px",
-                padding: "20px",
-                width: "250px",
-                cursor: "pointer",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                backdropFilter: "blur(10px)",
-                zIndex: 10,
-                ...message.position
-              }}
-            >
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "10px"
-              }}>
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px"
-                }}>
-                  <div style={{
-                    width: "12px",
-                    height: "12px",
-                    borderRadius: "50%",
-                    background: message.color
-                  }}></div>
-                  <h3 style={{
-                    margin: 0,
-                    color: message.color,
-                    fontSize: "1.2rem",
-                    fontFamily: "'Jost', sans-serif",
-                    fontWeight: 600
-                  }}>
-                    {message.title}
-                  </h3>
-                </div>
-                {message.music && (
-                  <div style={{
-                    fontSize: "1.2rem",
-                    opacity: 0.7
-                  }}>
-                    ♫
-                  </div>
-                )}
-              </div>
-              <p style={{
-                margin: "10px 0 0 0",
-                color: "#3a3631",
-                fontSize: "0.95rem",
-                lineHeight: 1.4,
-                opacity: 0.9
-              }}>
-                {message.content.substring(0, 80)}...
-              </p>
-              <div style={{
-                fontSize: "0.8rem",
-                color: "#999",
-                marginTop: "10px",
-                textAlign: "right"
-              }}>
-                {new Date(message.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+      <div className="message-grid">
+        {visibleMessages.map((message, i) => (
+          <motion.div
+            className="message-card"
+            key={message.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.06, type: 'spring', stiffness: 200 }}
+            whileHover={{ scale: 1.03 }}
+            onClick={() => openMessage(message)}
+          >
+            <div className="message-card-visual" style={{ background: `linear-gradient(135deg, ${message.color}15, #fff)`, border: `4px solid ${message.color}30` }}>
+              <div className="message-card-icon">✉️</div>
+            </div>
+            <h3 className="message-card-title" style={{ color: message.color }}>{message.title}</h3>
+            <p className="message-card-excerpt">{message.content.substring(0, 80)}...</p>
+            <div className="message-card-date">{new Date(message.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+          </motion.div>
+        ))}
       </div>
 
       {/* Message Detail Modal */}
@@ -378,78 +229,25 @@ const MessageBox = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 50 }}
               transition={{ type: "spring", damping: 20 }}
+              className="message-modal"
               style={{
-                position: "fixed",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
                 background: `linear-gradient(135deg, ${activeMessage.color}10, #ffffff)`,
                 border: `3px solid ${activeMessage.color}30`,
-                borderRadius: "20px",
-                padding: "40px",
-                width: "90%",
-                maxWidth: "600px",
-                maxHeight: "80vh",
-                overflowY: "auto",
-                zIndex: 1001,
                 boxShadow: "0 30px 60px rgba(0,0,0,0.2)",
-                backdropFilter: "blur(20px)"
+                backdropFilter: "blur(20px)",
+                zIndex: 1001
               }}
             >
               {/* Close Button */}
               <button
                 onClick={closeMessage}
-                onMouseEnter={() => sketchSounds.play('hover')}
-                style={{
-                  position: "absolute",
-                  top: "20px",
-                  right: "20px",
-                  background: "rgba(255,255,255,0.8)",
-                  border: "none",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  fontSize: "1.5rem",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: activeMessage.color,
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-                }}
+                className="message-modal-close"
+                style={{ color: activeMessage.color }}
               >
                 ✕
               </button>
 
-              {/* Music Controls */}
-              {activeMessage.music && (
-                <motion.button
-                  onClick={toggleMusic}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onMouseEnter={() => sketchSounds.play('hover')}
-                  style={{
-                    position: "absolute",
-                    top: "20px",
-                    left: "20px",
-                    background: "rgba(255,255,255,0.8)",
-                    border: `2px solid ${activeMessage.color}40`,
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    fontSize: "1.2rem",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: activeMessage.color,
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                    backdropFilter: "blur(10px)"
-                  }}
-                >
-                  {isPlaying ? "⏸️" : "▶️"}
-                </motion.button>
-              )}
+              {/* Music removed: messages are silent letters */}
 
               {/* Date */}
               <div style={{
@@ -475,27 +273,10 @@ const MessageBox = () => {
               </div>
 
               {/* Title */}
-              <h2 style={{
-                margin: "0 0 20px 0",
-                color: activeMessage.color,
-                fontSize: "2.5rem",
-                fontFamily: "'Caveat', cursive",
-                fontWeight: 700
-              }}>
-                {activeMessage.title}
-              </h2>
+              <h2 className="message-modal-title" style={{ color: activeMessage.color }}>{activeMessage.title}</h2>
 
               {/* Content */}
-              <div style={{
-                fontSize: "1.2rem",
-                lineHeight: 1.6,
-                color: "#3a3631",
-                marginBottom: "30px",
-                padding: "20px",
-                background: "rgba(255,255,255,0.5)",
-                borderRadius: "10px",
-                borderLeft: `4px solid ${activeMessage.color}`
-              }}>
+              <div className="message-modal-content" style={{ borderLeft: `4px solid ${activeMessage.color}` }}>
                 {activeMessage.content}
               </div>
 
@@ -575,7 +356,7 @@ const MessageBox = () => {
           boxShadow: "0 4px 15px rgba(0,0,0,0.05)"
         }}
       >
-        Click on any message to read it and listen to its music
+        Click on any message to read it
       </motion.div>
     </div>
   );

@@ -279,6 +279,129 @@ body .graphic-blob {
   overflow: hidden;
 }
 
+/* MessageBox responsive grid and modal */
+.message-box-page .message-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 3.5vw, 28px);
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.message-box-page .message-card {
+  width: clamp(140px, 30vw, 240px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.message-card-visual {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-card-icon { font-size: 2rem; }
+.message-card-title { margin: 0; font-size: 1.05rem; font-weight: 700; text-align: center; }
+.message-card-excerpt { margin: 0; font-size: 0.95rem; color: #3a3631; text-align: center; }
+.message-card-date { font-size: 0.8rem; color: #999; }
+
+/* Center the modal and make it responsive */
+.message-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 640px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.message-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.message-modal-title {
+  margin: 0 0 16px 0;
+  font-size: 1.8rem;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+
+.message-modal-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a3631;
+  margin-bottom: 20px;
+  padding: 14px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .message-box-page .message-grid { gap: 12px; padding: 12px; }
+  .message-box-page .message-card { width: calc(50% - 12px); }
+  .message-card-title { font-size: 1rem; }
+  .message-card-excerpt { font-size: 0.9rem; }
+  .message-modal { padding: 14px; width: 94%; }
+  .message-modal-title { font-size: 1.4rem; }
+  .message-modal-content { font-size: 0.95rem; padding: 12px; }
+  .message-modal-close { top: 12px; right: 12px; width: 36px; height: 36px; }
+}
+
+/* Force full-screen modal on very small devices to ensure content fits */
+@media (max-width: 420px) {
+  .message-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    padding: 12px 12px 20px 12px;
+    overflow-y: auto;
+    box-shadow: none;
+  }
+
+  /* make title and content smaller and keep close button reachable */
+  .message-modal-title { font-size: 1.2rem; margin-top: 6px; }
+  .message-modal-content { font-size: 0.95rem; padding: 10px; }
+  .message-modal-close { top: 10px; right: 10px; width: 36px; height: 36px; }
+
+  /* ensure navigation buttons stack vertically if present */
+  .message-modal .btn-row { display: flex; flex-direction: column; gap: 12px; }
+}
+
+@media (max-width: 380px) {
+  .message-box-page .message-card { width: 100%; }
+}
+
 .category-page::before {
   content: '';
   position: absolute;
@@ -1407,4 +1530,30 @@ a, button, .grid-link, .slider-img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Sketch detail specific: make the preview take most of the viewport while staying contained */
+.sketch-detail .artwork-container {
+  width: 100%;
+  /* leave small space for header/back button and margins */
+  height: calc(100vh - 140px);
+  max-height: 92vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .sketch-detail .artwork-container {
+    height: 84vh;
+    max-height: 88vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .sketch-detail .artwork-container {
+    height: calc(100vh - 100px);
+    max-height: 96vh;
+  }
 }
