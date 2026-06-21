@@ -1,12 +1,52 @@
 import { useEffect } from "react";
 import { motion as Motion } from "framer-motion";
-import { useNavigate, useParams } from "react-router-dom";
+import { useMemo } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 
 const SketchDetail = () => {
   const { id } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
   const sketch = sketches.find((sk) => sk.id === parseInt(id, 10));
+  const favoriteEmoji =
+    location.state?.fromFavorites && location.state?.expressionEmoji
+      ? location.state.expressionEmoji
+      : null;
+
+  const floatingFavoriteEmojis = useMemo(
+    () =>
+      favoriteEmoji
+        ? [...Array(18)].map((_, index) => ({
+            id: `favorite-detail-emoji-${index}`,
+            initial: {
+              opacity: 0,
+              x: Math.random() * window.innerWidth,
+              y: window.innerHeight + Math.random() * 80,
+            },
+            animate: {
+              opacity: [0, 0.64, 0],
+              y: `-${Math.random() * 560 + 150}px`,
+              x: `${Math.random() * 220 - 110}px`,
+              rotate: Math.random() * 80 - 40,
+              scale: [0.7, 1.18, 0.9],
+            },
+            transition: {
+              duration: Math.random() * 9 + 8,
+              repeat: Infinity,
+              repeatDelay: Math.random() * 3,
+              ease: "easeOut",
+            },
+            style: {
+              position: "fixed",
+              zIndex: 1,
+              pointerEvents: "none",
+              fontSize: `${Math.random() * 20 + 18}px`,
+            },
+          }))
+        : [],
+    [favoriteEmoji]
+  );
 
   useEffect(() => {
     let audio;
@@ -39,6 +79,21 @@ const SketchDetail = () => {
 
   return (
     <main className="sketch-detail">
+      {favoriteEmoji &&
+        floatingFavoriteEmojis.map((item) => (
+          <Motion.div
+            key={item.id}
+            className="favorite-detail-emoji"
+            initial={item.initial}
+            animate={item.animate}
+            transition={item.transition}
+            style={item.style}
+            aria-hidden="true"
+          >
+            {favoriteEmoji}
+          </Motion.div>
+        ))}
+
       <Motion.button
         type="button"
         className="back-button"

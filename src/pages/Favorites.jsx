@@ -1,26 +1,8 @@
 import { motion as Motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
+import { getExpressionEmoji } from "../utils/expressionEmojis.js";
 import { sketchSounds } from "../utils/sounds.js";
-
-const expressionEmojis = ["😊", "🥰", "✨", "💖", "🌸", "😌"];
-
-const getExpressionEmoji = (sketch, index) => {
-  const text = `${sketch.title || ""} ${sketch.note || ""}`.toLowerCase();
-
-  if (text.includes("badmosh") || text.includes("angry")) return "👺";
-  if (text.includes("hmmm")) return "🤔";
-  if (text.includes("special")) return "✨";
-  if (text.includes("vote")) return "🗳️";
-  if (text.includes("bindi")) return "🌙";
-  if (text.includes("temple")) return "🙏";
-  if (text.includes("saari") || text.includes("saree")) return "💃";
-  if (text.includes("black")) return "🖤";
-  if (text.includes("blink")) return "😉";
-  if (text.includes("eyes")) return "👀";
-
-  return expressionEmojis[index % expressionEmojis.length];
-};
 
 const Favorites = () => {
   const navigate = useNavigate();
@@ -59,45 +41,50 @@ const Favorites = () => {
         </div>
       ) : (
         <section className="favorites-orbit" aria-label="Favorite sketches">
-          {favoriteSketches.map((sketch, index) => (
-            <Motion.article
-              key={sketch.id}
-              className="favorite-circle-card"
-              initial={{ opacity: 0, y: 24, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                delay: index * 0.06,
-                type: "spring",
-                stiffness: 220,
-                damping: 18,
-              }}
-            >
-              <Link
-                to={`/sketch/${sketch.id}`}
-                className="favorite-circle-link"
-                aria-label={`Open ${sketch.title}`}
-                onClick={() => sketchSounds.play("click")}
-                onMouseEnter={() => sketchSounds.play("hover")}
+          {favoriteSketches.map((sketch, index) => {
+            const expressionEmoji = getExpressionEmoji(sketch, index);
+
+            return (
+              <Motion.article
+                key={sketch.id}
+                className="favorite-circle-card"
+                initial={{ opacity: 0, y: 24, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  delay: index * 0.06,
+                  type: "spring",
+                  stiffness: 220,
+                  damping: 18,
+                }}
               >
-                <span className="favorite-glow" />
-                <div className="favorite-circle-frame">
-                  <img
-                    src={sketch.image}
-                    alt={sketch.title}
-                    className="responsive-sketch"
-                  />
-                </div>
-                <span
-                  className="favorite-expression"
-                  aria-label="Expression"
-                  title="Expression"
+                <Link
+                  to={`/sketch/${sketch.id}`}
+                  state={{ fromFavorites: true, expressionEmoji }}
+                  className="favorite-circle-link"
+                  aria-label={`Open ${sketch.title}`}
+                  onClick={() => sketchSounds.play("click")}
+                  onMouseEnter={() => sketchSounds.play("hover")}
                 >
-                  {getExpressionEmoji(sketch, index)}
-                </span>
-                <p>{sketch.note}</p>
-              </Link>
-            </Motion.article>
-          ))}
+                  <span className="favorite-glow" />
+                  <div className="favorite-circle-frame">
+                    <img
+                      src={sketch.image}
+                      alt={sketch.title}
+                      className="responsive-sketch"
+                    />
+                  </div>
+                  <span
+                    className="favorite-expression"
+                    aria-label={`Expression ${expressionEmoji}`}
+                    title="Expression"
+                  >
+                    {expressionEmoji}
+                  </span>
+                  <p>{sketch.note}</p>
+                </Link>
+              </Motion.article>
+            );
+          })}
         </section>
       )}
     </main>

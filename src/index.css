@@ -718,6 +718,12 @@ h2 {
   line-height: 1.25;
 }
 
+.favorite-detail-emoji {
+  text-shadow: 0 12px 26px rgba(47, 42, 36, 0.16);
+  filter: drop-shadow(0 8px 14px rgba(201, 95, 115, 0.14));
+  user-select: none;
+}
+
 .message-box-page {
   text-align: center;
 }
