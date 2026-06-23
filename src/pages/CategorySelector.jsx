@@ -100,8 +100,8 @@ const CategorySelector = () => {
         transition={{ duration: 0.65 }}
         className="category-shell"
       >
-        <span className="section-kicker">Choose a collection</span>
-        <h2>Explore My Art</h2>
+        <span className="section-kicker">Moments I Kept</span>
+        <h2>unknowingly becoming the most beautiful chapter</h2>
 
         <div className="button-group">
           {categories.map((category, index) => (

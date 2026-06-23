@@ -64,11 +64,12 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <span className="home-kicker">Personal sketch archive</span>
-        <h1>Welcome to My Art World</h1>
+        <span className="home-kicker">The Museum of Unsent Feelings</span>
+        <h1>In Every Season You Appeared</h1>
         <p>
-          Every stroke tells a story. Explore sketches, favorite moments, eye
-          studies, and quiet notes from the artist's journey.
+          You never posed for these sketches
+          You never asked for them
+          Yet somehow, for years, you became the reason I kept drawing
         </p>
       </Motion.section>
 
