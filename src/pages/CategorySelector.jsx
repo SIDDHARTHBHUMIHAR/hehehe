@@ -4,23 +4,23 @@ import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
-    title: "All Sketches",
-    detail: "Browse the full sketchbook",
+    title: "PRIVATE ARCHIVE",
+    detail: "For years, your photographs became my sketches",
     path: "/gallery",
   },
   {
-    title: "Favorites",
-    detail: "The pieces worth pausing for",
+    title: "The Ones I Returned To",
+    detail: "Not the best sketches Just the ones I couldn't stop looking at",
     path: "/favorites",
   },
   {
-    title: "Eyes",
-    detail: "A focused study collection",
+    title: "The Eyes That Stayed With Me",
+    detail: "Years passed Somehow these eyes never did",
     path: "/eyes",
   },
   {
-    title: "Message Box",
-    detail: "Short notes and reflections",
+    title: "Words Between Pencil Strokes",
+    detail: "Because some feelings never learned how to become conversations.",
     path: "/message-box",
   },
 ];
