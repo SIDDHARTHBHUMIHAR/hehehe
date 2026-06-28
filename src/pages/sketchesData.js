@@ -220,7 +220,7 @@ export const sketches = [
       title: "2022,Nov18", 
       image: "/Ipnb/2022,Nov18.jpg", 
       note: "2022,Nov18", 
-      music: "",
+      music: "/audio/Id25.mp3",
       favorite: false,
       category: "general"
     },
@@ -382,7 +382,7 @@ export const sketches = [
       title: "saari", 
       image: "/Ipnb/saari1.jpg", 
       note: "saari", 
-      music: "",
+      music: "/audio/Id43 (1).mp3",
       favorite: false,
       category: "general"
     },
