@@ -49,7 +49,7 @@ export const sketches = [
       title: "2021, Jan25", 
       image: "/Ipnb/2021, Jan25.jpg", 
       note: "2021, Jan 25", 
-      music: "",
+      music: "/audio/Id6.mp3",
       favorite: false,
       category: "general"
     },
@@ -67,7 +67,7 @@ export const sketches = [
       title: "2021,Feb7", 
       image: "/Ipnb/2021,Feb7.jpg", 
       note: "2021,Feb 7", 
-      music: "",
+      music: "/audio/Id8.mp3",
       favorite: false,
       category: "general"
     },
@@ -94,7 +94,7 @@ export const sketches = [
       title: "2022,Jan13", 
       image: "/Ipnb/2022,Jan13(1).jpg", 
       note: "2022,Jan 13", 
-      music: "",
+      music: "/audio/Id11.mp3",
       favorite: false,
       category: "general"
     },
@@ -229,7 +229,7 @@ export const sketches = [
       title: "2022,Nov19", 
       image: "/Ipnb/2022,Nov19.jpg", 
       note: "2022,Nov19", 
-      music: "",
+      music: "/audio/Id26.mp3",
       favorite: false,
       category: "general"
     },
@@ -238,7 +238,7 @@ export const sketches = [
       title: "2022,Nov24", 
       image: "/Ipnb/2022,Nov24.jpg", 
       note: "2022,Nov24", 
-      music: "",
+      music: "/audio/Id27.mp3",
       favorite: false,
       category: "general"
     },
