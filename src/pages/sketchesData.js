@@ -283,7 +283,7 @@ export const sketches = [
       title: "2023,Dec31", 
       image: "/Ipnb/2023,Dec31.jpg", 
       note: "2023,Dec 31", 
-      music: "",
+      music: "/audio/Id32.mp3",
       favorite: false,
       category: "general"
     },
@@ -328,7 +328,7 @@ export const sketches = [
       title: "Black", 
       image: "/Ipnb/black.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id37.mp3",
       favorite: false,
       category: "general"
     },
