@@ -3,6 +3,18 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { formatDate, messages } from "./messagesData.js";
 
+const getMessagePreview = (content) => {
+  const maxLength = 44;
+
+  if (content.length <= maxLength) {
+    return content;
+  }
+
+  const trimmed = content.slice(0, maxLength);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  return `${trimmed.slice(0, lastSpace > 24 ? lastSpace : maxLength)}...`;
+};
+
 const MessageBox = () => {
   const navigate = useNavigate();
   const [activeMessage, setActiveMessage] = useState(null);
@@ -53,33 +65,39 @@ const MessageBox = () => {
         <h2 className="pencil-stroke">Message Box</h2>
       </Motion.header>
 
-      <div className="message-grid">
+      <div className="message-letter-grid">
         {visibleMessages.map((message, index) => (
           <Motion.button
             type="button"
-            className="message-card"
+            className="message-card message-letter"
             key={message.id}
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.06, type: "spring", stiffness: 200 }}
-            whileHover={{ y: -6 }}
+            aria-label={`Open message: ${message.title}`}
+            initial={{ opacity: 0, y: 18, rotateX: -16 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{
+              delay: index * 0.07,
+              type: "spring",
+              stiffness: 210,
+              damping: 20,
+            }}
+            whileHover={{ y: -8, rotate: index % 2 === 0 ? -1 : 1 }}
+            whileTap={{ scale: 0.94 }}
             onClick={() => setActiveMessage(message)}
+            style={{
+              "--message-color": message.color,
+            }}
           >
-            <div
-              className="message-card-visual"
-              style={{
-                "--message-color": message.color,
-              }}
-            >
+            <span className="message-letter-fold" aria-hidden="true" />
+            <span className="message-letter-lines" aria-hidden="true">
               <span />
-            </div>
-            <h3 className="message-card-title" style={{ color: message.color }}>
-              {message.title}
-            </h3>
-            <p className="message-card-excerpt">
-              {message.content.substring(0, 86)}...
-            </p>
-            <time className="message-card-date" dateTime={message.date}>
+              <span />
+              <span />
+            </span>
+            <span className="message-letter-title">{message.title}</span>
+            <span className="message-letter-preview">
+              {getMessagePreview(message.content)}
+            </span>
+            <time className="message-letter-date" dateTime={message.date}>
               {new Date(message.date).toLocaleDateString("en-US", {
                 month: "short",
                 day: "numeric",
