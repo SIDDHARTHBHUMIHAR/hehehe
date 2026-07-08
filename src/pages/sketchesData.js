@@ -256,7 +256,7 @@ export const sketches = [
       title: "2022,Dec15", 
       image: "/Ipnb/2022,Dec15.jpg", 
       note: "2022,Dec 15", 
-      music: "",
+      music: "/audio/Id29.mp3",
       favorite: false,
       category: "general"
     },
@@ -346,7 +346,7 @@ export const sketches = [
       title: "Eyes", 
       image: "/Ipnb/eyes.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id39.mp3",
       favorite: false,
       category: "general"
     },
@@ -391,7 +391,7 @@ export const sketches = [
       title: "Saari", 
       image: "/Ipnb/Saari2.jpg", 
       note: "Saari", 
-      music: "",
+      music: "/audio/Id44.mp3",
       favorite: false,
       category: "general"
     },
