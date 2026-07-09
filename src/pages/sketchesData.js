@@ -148,7 +148,7 @@ export const sketches = [
       title: "2022,Aug31", 
       image: "/Ipnb/2022,Aug31.jpg", 
       note: "2022,Aug31", 
-      music: "",
+      music: "/audio/Id17.mp3",
       favorite: false,
       category: "general"
     },
@@ -310,7 +310,7 @@ export const sketches = [
       title: "Bindi", 
       image: "/Ipnb/bindi.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id35.mp3",
       favorite: false,
       category: "general"
     },
@@ -319,7 +319,7 @@ export const sketches = [
       title: "3 NOV", 
       image: "/Ipnb/Birthday.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id36.mp3",
       favorite: true,
       category: "general"
     },
@@ -355,7 +355,7 @@ export const sketches = [
       title: "eyesBindi", 
       image: "/Ipnb/eyesBindi.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id40.mp3",
       favorite: false,
       category: "general"
     },
@@ -400,7 +400,7 @@ export const sketches = [
       title: "special", 
       image: "/Ipnb/special.jpg", 
       note: "special", 
-      music: "",
+      music: "/audio/Id45.mp3",
       favorite: true,
       category: "general"
     },
