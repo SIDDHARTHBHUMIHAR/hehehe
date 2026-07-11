@@ -4,7 +4,7 @@ export const sketches = [
       title: "2018,nov 8", 
       image: "/Ipnb/2018,nov 8.jpg", 
       note: "2018,nov 8", 
-      music: "/audio/song 21.mp3",
+      music: "/audio/Id1.mp3",
       favorite: true,
       category: "general"
     },
@@ -130,7 +130,7 @@ export const sketches = [
       title: "2022,Aug12", 
       image: "/Ipnb/2022,Aug12.jpg", 
       note: "2022,Aug 12", 
-      music: "",
+      music: "/audio/Id15.mp3",
       favorite: false,
       category: "general"
     },
@@ -193,7 +193,7 @@ export const sketches = [
       title: "2022,Oct15", 
       image: "/Ipnb/2022,Oct15(1).jpg", 
       note: "2022,Oct15", 
-      music: "",
+      music: "/audio/Id22.mp3",
       favorite: false,
       category: "general"
     },
@@ -301,7 +301,7 @@ export const sketches = [
       title: "BADMOSH ", 
       image: "/Ipnb/angry.jpg", 
       note: "A portrait of emotions.", 
-      music: "",
+      music: "/audio/Id34.mp3",
       favorite: true,
       category: "general"
     },
