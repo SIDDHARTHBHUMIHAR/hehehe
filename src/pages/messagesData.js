@@ -5,7 +5,7 @@
 export const messages = [
   {
     id: 1,
-    title: "Inspiration Day",
+    title: "First Voice Message",
     content: "Aaj phle baar usne voice msg bhja phli bar uski awaz suni maine kisi auto wale ne uske pair k pass se ekdm apni auto nikali vaise to mujhe uss auto wale pr bhut gussa aarha hai pr yaar uske vje se phli baar usne mujhe voice msg bhja lekin uska gussa ekdm mere jaisa hai ekdm khunkhar bhut gusse me ty bach gya vo auto wala aacha hua aunty ji sath me ty vrna maar maar k khchumbad bna deti yea uska",
     color: "#ff6b6b",
     position: { top: "15%", left: "10%" },
