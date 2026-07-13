@@ -5,7 +5,6 @@
 export const messages = [
   {
     id: 1,
-    date: "",
     title: "Inspiration Day",
     content: "Aaj phle baar usne voice msg bhja phli bar uski awaz suni maine kisi auto wale ne uske pair k pass se ekdm apni auto nikali vaise to mujhe uss auto wale pr bhut gussa aarha hai pr yaar uske vje se phli baar usne mujhe voice msg bhja lekin uska gussa ekdm mere jaisa hai ekdm khunkhar bhut gusse me ty bach gya vo auto wala aacha hua aunty ji sath me ty vrna maar maar k khchumbad bna deti yea uska",
     color: "#ff6b6b",
@@ -14,7 +13,6 @@ export const messages = [
   },
   {
     id: 2,
-    date: "2024-12-02", 
     title: "New Technique",
     content: "Experimented with cross-hatching today. The texture it creates is absolutely mesmerizing!",
     color: "#4a90e2",
@@ -23,7 +21,6 @@ export const messages = [
   },
   {
     id: 3,
-    date: "2024-12-03",
     title: "Artist Thoughts",
     content: "Art isn't just about what you see. It's about what you feel while creating it.",
     color: "#6bcf7f",
@@ -32,7 +29,6 @@ export const messages = [
   },
   {
     id: 4,
-    date: "2024-12-04",
     title: "Sketchbook Love",
     content: "My sketchbook is like a visual diary. Each page tells a story of that particular moment.",
     color: "#ff8e53",
@@ -41,7 +37,6 @@ export const messages = [
   },
   {
     id: 5,
-    date: "2024-12-05",
     title: "Creative Block",
     content: "Hit a creative block today. Sometimes stepping away is the best solution. Tomorrow is a new day!",
     color: "#9b59b6",
@@ -50,7 +45,6 @@ export const messages = [
   },
   {
     id: 6,
-    date: "2024-12-06",
     title: "Progress",
     content: "Looking back at old sketches shows how much progress I've made. Growth is beautiful.",
     color: "#3498db",
@@ -59,7 +53,6 @@ export const messages = [
   },
   {
     id: 7,
-    date: "2024-12-07",
     title: "Color Palette",
     content: "Discovered a new color combination today: burnt sienna and cerulean blue. Perfect for autumn sketches.",
     color: "#e74c3c",
@@ -68,7 +61,6 @@ export const messages = [
   },
   {
     id: 8,
-    date: "2024-12-08",
     title: "Art & Emotions",
     content: "Every stroke carries emotion. Today's sketches are filled with joy and gratitude.",
     color: "#2ecc71",
@@ -77,13 +69,4 @@ export const messages = [
   }
 ];
 
-// Format date for display
-export const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
-};
+

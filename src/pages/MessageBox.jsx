@@ -1,7 +1,7 @@
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { formatDate, messages } from "./messagesData.js";
+import { messages } from "./messagesData.js";
 
 const getMessagePreview = (content) => {
   const maxLength = 44;
@@ -97,12 +97,6 @@ const MessageBox = () => {
             <span className="message-letter-preview">
               {getMessagePreview(message.content)}
             </span>
-            <time className="message-letter-date" dateTime={message.date}>
-              {new Date(message.date).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-              })}
-            </time>
           </Motion.button>
         ))}
       </div>
@@ -137,9 +131,6 @@ const MessageBox = () => {
                 x
               </button>
 
-              <time className="message-modal-date" dateTime={activeMessage.date}>
-                {formatDate(activeMessage.date)}
-              </time>
               <h2 className="message-modal-title">{activeMessage.title}</h2>
               <div className="message-modal-content">{activeMessage.content}</div>
 
