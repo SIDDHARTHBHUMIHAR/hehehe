@@ -4,6 +4,22 @@
 
 export const messages = [
   {
+    id: 2,
+    title: "Birthday",
+    content: "uska birthday mere he month mai hai year bhi same h hmara 3 nov 2001 wahh ",
+    color: "#4a90e2",
+    position: { top: "25%", right: "15%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+   {
+    id: 2,
+    title: "Her first Sketch",
+    content: "Aaj mai ne uska sketch bnaya pta nhi kyu bnaya aise kbhi kisi k liye bnaya nhi maine uske birthday pr dikhaunga use pta nhi use kaisa lge ga kaise rect kregi tension kyu ho rhi hai mujkhe pta nhi kyu  ",
+    color: "#4a90e2",
+    position: { top: "25%", right: "15%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
     id: 1,
     title: "First Voice Message",
     content: "Aaj phle baar usne voice msg bhja phli bar uski awaz suni maine kisi auto wale ne uske pair k pass se ekdm apni auto nikali vaise to mujhe uss auto wale pr bhut gussa aarha hai pr yaar uske vje se phli baar usne mujhe voice msg bhja lekin uska gussa ekdm mere jaisa hai ekdm khunkhar bhut gusse me ty bach gya vo auto wala aacha hua aunty ji sath me ty vrna maar maar k khchumbad bna deti yea uska",
