@@ -1,5 +1,5 @@
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { messages } from "./messagesData.js";
 
@@ -18,13 +18,9 @@ const getMessagePreview = (content) => {
 const MessageBox = () => {
   const navigate = useNavigate();
   const [activeMessage, setActiveMessage] = useState(null);
-  const [visibleMessages, setVisibleMessages] = useState([]);
-
-  useEffect(() => {
-    const count = 5 + Math.floor(Math.random() * 4);
-    const shuffled = [...messages].sort(() => 0.5 - Math.random());
-    setVisibleMessages(shuffled.slice(0, count));
-  }, []);
+  // Always render the complete collection. Randomly selecting a subset here
+  // made messages disappear and change whenever the page was refreshed.
+  const visibleMessages = messages;
 
   const activeIndex = visibleMessages.findIndex(
     (message) => message.id === activeMessage?.id
