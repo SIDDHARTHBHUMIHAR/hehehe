@@ -29,8 +29,8 @@ export const messages = [
   },
   {
     id: 4,
-    title: "New Technique",
-    content: "Experimented with cross-hatching today. The texture it creates is absolutely mesmerizing!",
+    title: "Her sunday stories",
+    content: "Mujhe sundays kuch khass psnd nhi ty pr ab sundays ka wait rehta hai kyuki uske stories dekhne ko milte hai kyu ki sunday ko uske papa puri family ko car me ghumane le jate hai aur vo fir story lgati hai apni 😍 ",
     color: "#4a90e2",
     position: { top: "25%", right: "15%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
