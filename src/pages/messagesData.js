@@ -53,8 +53,8 @@ export const messages = [
   },
   {
     id: 7,
-    title: "Creative Block",
-    content: "Hit a creative block today. Sometimes stepping away is the best solution. Tomorrow is a new day!",
+    title: "vo aur uski clg ki baaten",
+    content: "jb vo apne clg ki classess ki baaten btati hai mujhe itna maza aaata h sune me jis trh se bolti hai vo ekdm bacho ki trh full invested hoke aaj btaa rhi ty kaise uske class me ldkiyan aaps me baten krti hai uska vo techer jo khub lambi lambi baaten fekta hai ",
     color: "#9b59b6",
     position: { bottom: "30%", right: "10%" },
     music: "/audio/aud1.mp3"  // ADDED MUSIC
@@ -69,16 +69,16 @@ export const messages = [
   },
   {
     id: 9,
-    title: "Color Palette",
-    content: "Discovered a new color combination today: burnt sienna and cerulean blue. Perfect for autumn sketches.",
+    title: "one of the best sunday story",
+    content: "itni hassi aayi mujhe aaj kitni baar uss chat ko pdh pdh k hssa hu mai pr bichare uncle ji k liye bura bhi lg rha the bolti hai hum sb khaa rhe h sb soch rhe h papa kyu nhi aarhe fir pta chla unki shirt fhht gyi car se nikalte time bichare kuch khae bhi nhi fir yea log bhi jldi ghr aagye",
     color: "#e74c3c",
     position: { top: "10%", right: "5%" },
     music: "/audio/aud1.mp3"  // ADDED MUSIC
   },
   {
     id: 10,
-    title: "Art & Emotions",
-    content: "Every stroke carries emotion. Today's sketches are filled with joy and gratitude.",
+    title: "hmari azeeb baaten",
+    content: "mujhe bhut maza aata hai usse baten krne me aur use bhi hum ab kuch bhi baten krte hai azeb si kisi k bhi meme bhj k maze lete hai mera to mn krta hai bs usse baat he krte rhu sara kaam chor k bhut mst hai yaar yea",
     color: "#2ecc71",
     position: { bottom: "15%", left: "60%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
