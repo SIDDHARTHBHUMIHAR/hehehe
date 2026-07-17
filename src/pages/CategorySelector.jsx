@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const categories = [
   {
     title: "PRIVATE ARCHIVE",
-    detail: "For years, your photographs became my sketches",
+    detail: "For years, her photographs became my sketches",
     path: "/gallery",
   },
   {
@@ -20,7 +20,7 @@ const categories = [
   },
   {
     title: "Words Between Pencil Strokes",
-    detail: "Because some feelings never learned how to become conversations.",
+    detail: "My bak-bak with her",
     path: "/message-box",
   },
 ];

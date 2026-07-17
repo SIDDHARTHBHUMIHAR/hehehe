@@ -45,8 +45,8 @@ export const messages = [
   },
   {
     id: 6,
-    title: "Sketchbook Love",
-    content: "My sketchbook is like a visual diary. Each page tells a story of that particular moment.",
+    title: "She is amazing ",
+    content: "Woww She is smart , fun and soo soo beautiful and very very great personality and her smile aree yaar",
     color: "#ff8e53",
     position: { top: "40%", left: "50%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC

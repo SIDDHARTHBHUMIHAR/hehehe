@@ -13,7 +13,7 @@ const Eyes = () => {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio("/audio/eyes 5.mp3");
+    const audio = new Audio("/audio/Ideyes.mp3");
     audio.loop = true;
     audio.volume = 0.45;
 
