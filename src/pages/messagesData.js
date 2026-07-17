@@ -61,8 +61,8 @@ export const messages = [
   },
   {
     id: 8,
-    title: "Progress",
-    content: "Looking back at old sketches shows how much progress I've made. Growth is beautiful.",
+    title: "Tile",
+    content: "Tile bhoot pyare lgte hai uske chehre pe 5 hai ",
     color: "#3498db",
     position: { top: "60%", left: "20%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC

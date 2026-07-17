@@ -65,11 +65,11 @@ const Home = () => {
         transition={{ duration: 0.7 }}
       >
         <span className="home-kicker">The Museum of Unsent Feelings</span>
-        <h1>In Every Season You Appeared</h1>
+        <h1>In Every Season She Appeared</h1>
         <p>
-          You never posed for these sketches
-          You never asked for them
-          Yet somehow, for years, you became the reason I kept drawing
+          She never posed for these sketches
+          She never asked for them
+          Yet somehow, for years, She became the reason I kept drawing
         </p>
       </Motion.section>
 
@@ -80,7 +80,7 @@ const Home = () => {
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.96 }}
       >
-        Open Sketchbook
+        Click To Open Sketchbook
       </Motion.button>
     </main>
   );

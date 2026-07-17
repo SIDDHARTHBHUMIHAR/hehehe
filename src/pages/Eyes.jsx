@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 
+// Edit these lines once to show the same message beneath every eye sketch.
+const COMMON_EYES_MESSAGE = "Write your common message here.";
+
 const Eyes = () => {
   const navigate = useNavigate();
   const eyeSketches = sketches.filter((sketch) => sketch.category === "eyes");
@@ -95,7 +98,7 @@ const Eyes = () => {
                 alt={currentSketch.title || "Eye sketch"}
                 className="responsive-sketch"
               />
-              <figcaption>{currentSketch.note}</figcaption>
+              <figcaption>{COMMON_EYES_MESSAGE}</figcaption>
             </Motion.figure>
           </AnimatePresence>
 
