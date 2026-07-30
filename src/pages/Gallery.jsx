@@ -11,13 +11,18 @@ const Gallery = () => {
 
   const categories = [
     "all",
-    ...new Set(sketches.map((sketch) => sketch.category || "general")),
+    ...new Set(
+      sketches
+        .map((sketch) => sketch.category || "general")
+        .filter((category) => category !== "eyes"),
+    ),
   ];
 
+  const gallerySketches = sketches.filter((sketch) => sketch.category !== "eyes");
   const filteredSketches =
     filter === "all"
-      ? sketches
-      : sketches.filter((sketch) => sketch.category === filter);
+      ? gallerySketches
+      : gallerySketches.filter((sketch) => sketch.category === filter);
 
   const handleFilter = (category) => {
     sketchSounds.play("pageTurn");
