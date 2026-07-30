@@ -9,12 +9,13 @@ const clearScheduledStop = () => {
   }
 };
 
-export const playSketchMusic = (source) => {
+export const playSketchMusic = (source, volume = 1) => {
   if (!source) return;
 
   clearScheduledStop();
 
   if (currentAudio && currentSource === source) {
+    currentAudio.volume = volume;
     currentAudio.play().catch((err) => console.warn("Audio playback prevented:", err));
     return;
   }
@@ -26,6 +27,7 @@ export const playSketchMusic = (source) => {
 
   currentAudio = new Audio(source);
   currentAudio.loop = true;
+  currentAudio.volume = volume;
   currentSource = source;
   currentAudio.play().catch((err) => console.warn("Audio playback prevented:", err));
 };

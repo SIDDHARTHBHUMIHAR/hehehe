@@ -1,34 +1,21 @@
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
+import { playSketchMusic, scheduleSketchMusicStop } from "../utils/sketchMusic.js";
 
 // Edit these lines once to show the same message beneath every eye sketch.
-const COMMON_EYES_MESSAGE = "Write your common message here.";
+const COMMON_EYES_MESSAGE = "Kabhi tumhe saamne se dekhne ka mauka nahi mila  Bas scoty🛵 pr uncle k sath piche bethe k guzarte hue scafh se dhake uss chehre pe yea Ankhein👀 dekhi ty aur fir roj jb meri catjee🚐 ki van vaha rukti to window🪟 k side beth k tumhare aane ka wait krta🫠🧐 kbhi tum dikhti aur kbhi nhi🙂 Time kitna bith gya pr aaj bhi unmein wahi sukoon hai🙆 shayad isiliye yea sketch sirf ankhon ka nhi yaad ka hai💕 aur vo aaj bhi utni he sunder hai🫣🫶";
 
 const Eyes = () => {
   const navigate = useNavigate();
   const eyeSketches = sketches.filter((sketch) => sketch.category === "eyes");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const audioRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio("/audio/Ideyes.mp3");
-    audio.loop = true;
-    audio.volume = 0.45;
+    playSketchMusic("/audio/Ideyes.mp3", 0.45);
 
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.catch((err) => console.warn("Autoplay prevented:", err));
-    }
-
-    audioRef.current = audio;
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-      audioRef.current = null;
-    };
+    return scheduleSketchMusicStop;
   }, []);
 
   const goToPrevious = () => {

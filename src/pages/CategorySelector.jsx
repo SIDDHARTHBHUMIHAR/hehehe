@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { playSketchMusic } from "../utils/sketchMusic.js";
 
 const categories = [
   {
@@ -112,7 +113,13 @@ const CategorySelector = () => {
               whileHover={{ y: -6 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              onClick={() => navigate(category.path)}
+              onClick={() => {
+                if (category.path === "/eyes") {
+                  playSketchMusic("/audio/Ideyes.mp3", 0.45);
+                }
+
+                navigate(category.path);
+              }}
               style={{ animationDelay: `${index * 0.06}s` }}
             >
               <span>{category.title}</span>
