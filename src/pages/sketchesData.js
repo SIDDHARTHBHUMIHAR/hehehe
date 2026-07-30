@@ -176,7 +176,7 @@ export const sketches = [
       image: "/Ipnb/2022,Oct11.jpg", 
       note: "2022,Oct11", 
       music: "/audio/Id20.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
@@ -194,7 +194,7 @@ export const sketches = [
       image: "/Ipnb/2022,Oct15(1).jpg", 
       note: "2022,Oct15", 
       music: "/audio/Id22.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
@@ -300,7 +300,7 @@ export const sketches = [
       id: 34, 
       title: "BADMOSH ", 
       image: "/Ipnb/angry.jpg", 
-      note: "A portrait of emotions.", 
+      note: "Chota don 👺", 
       music: "/audio/Id34.mp3",
       favorite: true,
       category: "general"
@@ -309,16 +309,16 @@ export const sketches = [
       id: 35, 
       title: "Bindi", 
       image: "/Ipnb/bindi.jpg", 
-      note: "A portrait of emotions.", 
+      note: "her Bindi 🙈", 
       music: "/audio/Id35.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
       id: 36, 
       title: "3 NOV", 
       image: "/Ipnb/Birthday.jpg", 
-      note: "A portrait of emotions.", 
+      note: "My special day her B'day❤️.", 
       music: "/audio/Id36.mp3",
       favorite: true,
       category: "general"
@@ -327,16 +327,16 @@ export const sketches = [
       id: 37, 
       title: "Black", 
       image: "/Ipnb/black.jpg", 
-      note: "A portrait of emotions.", 
+      note: "Aadat👀", 
       music: "/audio/Id37.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
       id: 38, 
       title: "Blink", 
       image: "/Ipnb/blink.jpg", 
-      note: "A portrait of emotions.", 
+      note: "tera fitor😉", 
       music: "/audio/Id38.mp3",
       favorite: true,
       category: "general"
@@ -345,7 +345,7 @@ export const sketches = [
       id: 39, 
       title: "Eyes", 
       image: "/Ipnb/eyes.jpg", 
-      note: "A portrait of emotions.", 
+      note: "Itna masoom👀 ", 
       music: "/audio/Id39.mp3",
       favorite: false,
       category: "general"
@@ -354,7 +354,7 @@ export const sketches = [
       id: 40, 
       title: "eyesBindi", 
       image: "/Ipnb/eyesBindi.jpg", 
-      note: "A portrait of emotions.", 
+      note: "uski ankhein🫠", 
       music: "/audio/Id40.mp3",
       favorite: false,
       category: "general"
@@ -363,7 +363,7 @@ export const sketches = [
       id: 41, 
       title: "hmmm", 
       image: "/Ipnb/hmmm.jpg", 
-      note: "A portrait of emotions.", 
+      note: "vo aur uske expressions🫩 my fav version of her🫶", 
       music: "/audio/Id41.mp3",
       favorite: true,
       category: "general"
@@ -372,7 +372,7 @@ export const sketches = [
       id: 42, 
       title: "Sketch 2", 
       image: "/Ipnb/Orange1.jpg", 
-      note: "A portrait of emotions.", 
+      note: "💕 her orange dreess🫠", 
       music: "/audio/Id42.mp3",
       favorite: false,
       category: "general"
@@ -381,7 +381,7 @@ export const sketches = [
       id: 43, 
       title: "saari", 
       image: "/Ipnb/saari1.jpg", 
-      note: "saari", 
+      note: "Itni khoobsurat 🙈🫣🫰", 
       music: "/audio/Id43 (1).mp3",
       favorite: false,
       category: "general"
