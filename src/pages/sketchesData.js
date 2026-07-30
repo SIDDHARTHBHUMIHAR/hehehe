@@ -158,7 +158,7 @@ export const sketches = [
       image: "/Ipnb/2022,Sep26.jpg", 
       note: "2022,Sep26", 
       music: "/audio/Id18.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
