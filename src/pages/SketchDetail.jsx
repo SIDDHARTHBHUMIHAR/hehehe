@@ -3,6 +3,7 @@ import { motion as Motion } from "framer-motion";
 import { useMemo } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
+import { playSketchMusic, scheduleSketchMusicStop } from "../utils/sketchMusic.js";
 
 const SketchDetail = () => {
   const { id } = useParams();
@@ -49,24 +50,9 @@ const SketchDetail = () => {
   );
 
   useEffect(() => {
-    let audio;
+    playSketchMusic(sketch?.music);
 
-    if (sketch?.music) {
-      audio = new Audio(sketch.music);
-      audio.loop = true;
-      const playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch((err) => console.warn("Autoplay prevented:", err));
-      }
-    }
-
-    return () => {
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    };
+    return scheduleSketchMusicStop;
   }, [sketch]);
 
   if (!sketch) {

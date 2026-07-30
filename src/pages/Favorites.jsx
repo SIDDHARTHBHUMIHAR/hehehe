@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { sketches } from "./sketchesData.js";
 import { getExpressionEmoji } from "../utils/expressionEmojis.js";
 import { sketchSounds } from "../utils/sounds.js";
+import { playSketchMusic } from "../utils/sketchMusic.js";
 
 const Favorites = () => {
   const navigate = useNavigate();
@@ -62,7 +63,10 @@ const Favorites = () => {
                   state={{ fromFavorites: true, expressionEmoji }}
                   className="favorite-circle-link"
                   aria-label={`Open ${sketch.title}`}
-                  onClick={() => sketchSounds.play("click")}
+                  onClick={() => {
+                    sketchSounds.play("click");
+                    playSketchMusic(sketch.music);
+                  }}
                   onMouseEnter={() => sketchSounds.play("hover")}
                 >
                   <span className="favorite-glow" />
