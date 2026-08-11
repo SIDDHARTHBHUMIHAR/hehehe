@@ -37,8 +37,8 @@ export const messages = [
   },
   {
     id: 5,
-    title: "Artist Thoughts",
-    content: "Art isn't just about what you see. It's about what you feel while creating it.",
+    title: "Intazar",
+    content: "Mai betha hu intazar me aaj bhi uske..vo aae ga kbtk btata bhi to nhi... log kehte hai bhula kr usse kisi aur se dil lgaa lu mai.. kambakht yea dil kisi aur pr aata bhi to nhi",
     color: "#6bcf7f",
     position: { bottom: "20%", left: "5%" },
     music: "/audio/aud1.mp3"  // ADDED MUSIC
@@ -81,6 +81,14 @@ export const messages = [
     content: "mujhe bhut maza aata hai usse baten krne me aur use bhi hum ab kuch bhi baten krte hai azeb si kisi k bhi meme bhj k maze lete hai mera to mn krta hai bs usse baat he krte rhu sara kaam chor k bhut mst hai yaar yea",
     color: "#2ecc71",
     position: { bottom: "15%", left: "60%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 11,
+    title: "Masti khor",
+    content: "Bhut masti khor hai yaar🥴💁 , har choti se choti baat pakad leti h aur fir chidhaa deti hai🤣🤣 ...pr acccha lgta hai mtlb mn krta hai sunte he jaau bhle mera he mazak kyu n udaa rhi ho😅😅",
+    color: "#f1c40f",
+    position: { top: "50%", left: "50%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
   }
 ];

@@ -363,7 +363,7 @@ export const sketches = [
       id: 41, 
       title: "hmmm", 
       image: "/Ipnb/hmmm.jpg", 
-      note: "vo aur uske expressions🫩 my fav version of her🫶", 
+      note: "My fav version of her🫶", 
       music: "/audio/Id41.mp3",
       favorite: true,
       category: "general"
@@ -397,7 +397,7 @@ export const sketches = [
     },
     { 
       id: 45, 
-      title: "special", 
+      title: "Most speacial one 🧿 din kuch khaas nhi jaa rha tha uska aaj uper se kal raat me mai gadho ki trh use bye bole bina gussa hoker soaa gya kyu ki usne mujhe daant k meri I", 
       image: "/Ipnb/special.jpg", 
       note: "special", 
       music: "/audio/Id45.mp3",
