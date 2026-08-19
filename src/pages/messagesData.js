@@ -90,7 +90,56 @@ export const messages = [
     color: "#f1c40f",
     position: { top: "50%", left: "50%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
-  }
+  },
+  {
+    id: 12,
+    title: "Safaiyon ka silsila",
+    content: "Khatam karte hai ab safaiyon ka silsila vo bhi thak gyi hogi hume bura samjhte samjhte ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 13,
+    title: "Missing Her ",
+    content: "The feeling of missing someone who was never yours, yet somehow feels like biggest loss of your life. ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 14,
+    title: "Kitni pasnd hai",
+    content: "Kbhi Kbhi mai sochta hu vo mujhe kitni psnd hai to shayad vo mujhe itni psnd hai ki vo lakh baar mujhe rulla de fir bhi mai uski baaten yaad kr kr uski ankhe dekh k mai apna sara dard bhul jau aur Mahadev na kre pr kya pta aisa ho kbhi vo mujhse naraj ho jae baat na kre salo mahino na kre tbhi ager vo ekbaar meri trfh mudh kr dekh le to mera dil aaj bhi usse phle din jb usse baat ki vaise he baat kre khush ho ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 15,
+    title: "Der se baat",
+    content: "2 din se bhut kam baat hui ty vo delhi gyi ty family k sath to aaj usne raat k 1 baje tk baat ki maine bola ki aaj to itna late tk jgaa diya maine to usne jo bola na jane maine kitni baar pdha uss chat ko ' Usne bola 2 din se baat nhi hui ty to uska kota pura hogya' Hayyyy mai to gyaaa🫠  ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 16,
+    title: "Yu chup rahke",
+    content: "Yu chup rahke hume saza na do , Yu naraz hoke hume chhod na do , Hare huye hosle ki himmat ho tum , Yu rooth ke hume aansu na do ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 17,
+    title: "Concrete🪨⛏️",
+    content: " Concrete...Bolti h uska dil concrete ka h nhi gusne degi 😅 pr mai bhi koshish krta rhunga bola usse ander aaker rhunga🪨 🔨⛏️  ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  
 ];
 
 
