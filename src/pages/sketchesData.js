@@ -1,7 +1,7 @@
 export const sketches = [
     { 
       id: 1, 
-      title: "2018,nov 8", 
+      title: "A Moment Etched Forever", 
       image: "/Ipnb/2018,nov 8.jpg", 
       note: "2018,nov 8", 
       music: "/audio/Id1.mp3",
@@ -23,12 +23,12 @@ export const sketches = [
       image: "/Ipnb/2019 , Aug31.jpg", 
       note: "2019, june14", 
       music: "/audio/Id3.mp3",
-      favorite: true,
+      favorite: false,
       category: "general"
     },
     { 
       id: 4, 
-      title: "2019 , First Vote", 
+      title: "2019 ,Her First Vote", 
       image: "/Ipnb/2019 , First Vote.jpg", 
       note: "2019 , First Vote", 
       music: "/audio/Id4.mp3",

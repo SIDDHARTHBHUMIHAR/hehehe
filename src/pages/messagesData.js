@@ -5,7 +5,7 @@
 export const messages = [
   {
     id: 1,
-    title: "Birthday",
+    title: "Nov 3rd ",
     content: "uska birthday mere he month mai hai year bhi same h hmara 3 nov 2001 wahh ",
     color: "#4a90e2",
     position: { top: "25%", right: "15%" },
