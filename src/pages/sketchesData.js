@@ -3,7 +3,7 @@ export const sketches = [
       id: 1, 
       title: "A Moment Etched Forever", 
       image: "/Ipnb/2018,nov 8.jpg", 
-      note: "2018,nov 8 A Moment Etched Forever ", 
+      note: "2018,nov 8 || A Moment Etched Forever ", 
       music: "/audio/Id1.mp3",
       favorite: true,
       category: "general"

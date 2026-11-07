@@ -90,7 +90,7 @@ const Gallery = () => {
                   className="responsive-sketch"
                 />
               </div>
-              <p>{sketch.note}</p>
+              <p>{sketch.title}</p>
             </Link>
           </Motion.article>
         ))}
