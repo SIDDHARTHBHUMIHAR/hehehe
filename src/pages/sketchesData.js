@@ -1,9 +1,9 @@
 export const sketches = [
     { 
       id: 1, 
-      title: "A Moment Etched Forever", 
+      title: "2018,nov 8 ", 
       image: "/Ipnb/2018,nov 8.jpg", 
-      note: "2018,nov 8 || A Moment Etched Forever ", 
+      note: " A Moment Etched Forever ", 
       music: "/audio/Id1.mp3",
       favorite: true,
       category: "general"
@@ -12,7 +12,7 @@ export const sketches = [
       id: 2, 
       title: "2019, june14", 
       image: "/Ipnb/2019, june14.jpg", 
-      note: "2019, june 14", 
+      note: "Cute hai ", 
       music: "/audio/Id2.mp3",
       favorite: false,
       category: "general"
@@ -21,7 +21,7 @@ export const sketches = [
       id: 3, 
       title: "2019, june14", 
       image: "/Ipnb/2019 , Aug31.jpg", 
-      note: "2019, june14", 
+      note: "Kisi aam k bagiche me pic click kri thi", 
       music: "/audio/Id3.mp3",
       favorite: false,
       category: "general"
@@ -30,7 +30,7 @@ export const sketches = [
       id: 4, 
       title: "2019 ,Her First Vote", 
       image: "/Ipnb/2019 , First Vote.jpg", 
-      note: "2019 , First Vote", 
+      note: " Her First Vote", 
       music: "/audio/Id4.mp3",
       favorite: true,
       category: "general"
@@ -39,7 +39,7 @@ export const sketches = [
       id: 5, 
       title: "2021,Jan19", 
       image: "/Ipnb/2021,Jan19.jpg", 
-      note: "2021,Jan 19", 
+      note: "🫣🫣", 
       music: "/audio/Id5.mp3",
       favorite: false,
       category: "general"
@@ -48,16 +48,16 @@ export const sketches = [
       id: 6, 
       title: "2021, Jan25", 
       image: "/Ipnb/2021, Jan25.jpg", 
-      note: "2021, Jan 25", 
+      note: "NCC Camp 2021,Jan 25🫡", 
       music: "/audio/Id6.mp3",
-      favorite: false,
+      favorite: true,
       category: "general"
     },
     { 
       id: 7, 
       title: "2021,Jan31", 
       image: "/Ipnb/2021,Jan31.jpg", 
-      note: "2021,Jan 31", 
+      note: "Pyari Hai", 
       music: "/audio/Id7.mp3",
       favorite: false,
       category: "general"
@@ -66,7 +66,7 @@ export const sketches = [
       id: 8, 
       title: "2021,Feb7", 
       image: "/Ipnb/2021,Feb7.jpg", 
-      note: "2021,Feb 7", 
+      note: "Hayeee 🫠", 
       music: "/audio/Id8.mp3",
       favorite: false,
       category: "general"
@@ -75,7 +75,7 @@ export const sketches = [
       id: 9, 
       title: "2022,Jan11", 
       image: "/Ipnb/2022,Jan11.jpg", 
-      note: "2022,Jan 11", 
+      note: "🥰🥰", 
       music: "/audio/Id9.mp3",
       favorite: false,
       category: "general"
@@ -84,7 +84,7 @@ export const sketches = [
       id: 10, 
       title: "2022,Jan13", 
       image: "/Ipnb/2022,Jan13.jpg", 
-      note: "2022,Jan 13", 
+      note: "cute 🫣", 
       music: "/audio/Id10.mp3",
       favorite: false,
       category: "general"
@@ -93,7 +93,7 @@ export const sketches = [
       id: 11, 
       title: "2022,Jan13", 
       image: "/Ipnb/2022,Jan13(1).jpg", 
-      note: "2022,Jan 13", 
+      note: "Her eyes 👀", 
       music: "/audio/Id11.mp3",
       favorite: false,
       category: "general"
@@ -111,7 +111,7 @@ export const sketches = [
       id: 13, 
       title: "2022,July26", 
       image: "/Ipnb/2022,July26.jpg", 
-      note: "2022,July 26", 
+      note: "wowww 🥰 mn to kr rha bs dekhta jau ", 
       music: "/audio/Id13.mp3",
       favorite: false,
       category: "general"
@@ -120,7 +120,7 @@ export const sketches = [
       id: 14, 
       title: "2022,Aug7", 
       image: "/Ipnb/2022,Aug7.jpg", 
-      note: "2022,Aug 7", 
+      note: "🫶🫶🙆", 
       music: "/audio/Id14.mp3",
       favorite: false,
       category: "general"
@@ -129,7 +129,7 @@ export const sketches = [
       id: 15, 
       title: "2022,Aug12", 
       image: "/Ipnb/2022,Aug12.jpg", 
-      note: "2022,Aug 12", 
+      note: "🫣🫣", 
       music: "/audio/Id15.mp3",
       favorite: false,
       category: "general"
@@ -138,7 +138,7 @@ export const sketches = [
       id: 16, 
       title: "2022,Aug28", 
       image: "/Ipnb/2022,Aug28.jpg", 
-      note: "2022,Aug28", 
+      note: "khule baalo jada acche lgte h", 
       music: "/audio/Id16.mp3",
       favorite: false,
       category: "general"
@@ -147,7 +147,7 @@ export const sketches = [
       id: 17, 
       title: "2022,Aug31", 
       image: "/Ipnb/2022,Aug31.jpg", 
-      note: "2022,Aug31", 
+      note: "💕", 
       music: "/audio/Id17.mp3",
       favorite: false,
       category: "general"
@@ -156,7 +156,7 @@ export const sketches = [
       id: 18, 
       title: "2022,Sep26", 
       image: "/Ipnb/2022,Sep26.jpg", 
-      note: "2022,Sep26", 
+      note: "itni cute kyu hai yea bhai 🫠🫠", 
       music: "/audio/Id18.mp3",
       favorite: true,
       category: "general"
@@ -165,7 +165,7 @@ export const sketches = [
       id: 19, 
       title: "2022,Oct7", 
       image: "/Ipnb/2022,Oct7.jpg", 
-      note: "2022,Oct7", 
+      note: "Smiple & adorable 🫣", 
       music: "/audio/Id19.mp3",
       favorite: false,
       category: "general"
@@ -174,16 +174,16 @@ export const sketches = [
       id: 20, 
       title: "2022,Oct11", 
       image: "/Ipnb/2022,Oct11.jpg", 
-      note: "2022,Oct11", 
+      note: "You are my sunshine ", 
       music: "/audio/Id20.mp3",
-      favorite: true,
+      favorite: false,
       category: "general"
     },
     { 
       id: 21, 
       title: "2022,Oct15", 
       image: "/Ipnb/2022,Oct15.jpg", 
-      note: "2022,Oct15", 
+      note: "Haste hue aur acchi lag rhi h", 
       music: "/audio/Id21.mp3",
       favorite: false,
       category: "general"
@@ -192,7 +192,7 @@ export const sketches = [
       id: 22, 
       title: "2022,Oct15", 
       image: "/Ipnb/2022,Oct15(1).jpg", 
-      note: "2022,Oct15", 
+      note: "My chasmish 🙆", 
       music: "/audio/Id22.mp3",
       favorite: true,
       category: "general"
@@ -201,7 +201,7 @@ export const sketches = [
       id: 23, 
       title: "2022,Oct19", 
       image: "/Ipnb/2022,Oct19.jpg", 
-      note: "2022,Oct19", 
+      note: "she is amazing ", 
       music: "/audio/Id23.mp3",
       favorite: false,
       category: "general"
@@ -210,7 +210,7 @@ export const sketches = [
       id: 24, 
       title: "2022,Oct25", 
       image: "/Ipnb/2022,Oct25.jpg", 
-      note: "2022,Oct25", 
+      note: "Hmmmm madam ji kya soch rhi h 🧐", 
       music: "/audio/Id24.mp3",
       favorite: false,
       category: "general"
@@ -219,7 +219,7 @@ export const sketches = [
       id: 25, 
       title: "2022,Nov18", 
       image: "/Ipnb/2022,Nov18.jpg", 
-      note: "2022,Nov18", 
+      note: "Til suit krta hai & ofcourse open hair ", 
       music: "/audio/Id25.mp3",
       favorite: false,
       category: "general"
@@ -273,7 +273,7 @@ export const sketches = [
       id: 31, 
       title: "2023,Feb10", 
       image: "/Ipnb/2023,Feb10.jpg", 
-      note: "2023,Feb 10", 
+      note: "gogeous 👀", 
       music: "/audio/Id31.mp3",
       favorite: false,
       category: "general"
@@ -291,7 +291,7 @@ export const sketches = [
       id: 33, 
       title: "2024,Mar30", 
       image: "/Ipnb/2024,Mar30.jpg", 
-      note: "2024,Mar30", 
+      note: "Tere naam ki salu bhai lr rhi h 😅😅", 
       music: "/audio/Id33.mp3",
       favorite: true,
       category: "general"
@@ -316,20 +316,20 @@ export const sketches = [
     },
     { 
       id: 36, 
-      title: "3 NOV", 
+      title: "3 NOV💕", 
       image: "/Ipnb/Birthday.jpg", 
-      note: "My special day her B'day❤️.", 
+      note: " special day her B'day❤️.", 
       music: "/audio/Id36.mp3",
       favorite: true,
       category: "general"
     },
     { 
       id: 37, 
-      title: "Black", 
+      title: "overdose of love", 
       image: "/Ipnb/black.jpg", 
       note: "Aadat👀", 
       music: "/audio/Id37.mp3",
-      favorite: true,
+      favorite: false,
       category: "general"
     },
     { 
@@ -343,7 +343,7 @@ export const sketches = [
     },
     { 
       id: 39, 
-      title: "Eyes", 
+      title: "Itna masoom👀", 
       image: "/Ipnb/eyes.jpg", 
       note: "Itna masoom👀 ", 
       music: "/audio/Id39.mp3",
@@ -352,7 +352,7 @@ export const sketches = [
     },
     { 
       id: 40, 
-      title: "eyesBindi", 
+      title: "uski ankhein🫠", 
       image: "/Ipnb/eyesBindi.jpg", 
       note: "uski ankhein🫠", 
       music: "/audio/Id40.mp3",
@@ -361,7 +361,7 @@ export const sketches = [
     },
     { 
       id: 41, 
-      title: "hmmm", 
+      title: "Hmmmmm ,My fav version of her🫶 ", 
       image: "/Ipnb/hmmm.jpg", 
       note: "My fav version of her🫶", 
       music: "/audio/Id41.mp3",
@@ -370,7 +370,7 @@ export const sketches = [
     },
     { 
       id: 42, 
-      title: "Sketch 2", 
+      title: "💕 her orange dreess🫠", 
       image: "/Ipnb/Orange1.jpg", 
       note: "💕 her orange dreess🫠", 
       music: "/audio/Id42.mp3",
@@ -379,7 +379,7 @@ export const sketches = [
     },
     { 
       id: 43, 
-      title: "saari", 
+      title: "Itni khoobsurat 🙈🫣🫰", 
       image: "/Ipnb/saari1.jpg", 
       note: "Itni khoobsurat 🙈🫣🫰", 
       music: "/audio/Id43 (1).mp3",
@@ -388,18 +388,18 @@ export const sketches = [
     },
     { 
       id: 44, 
-      title: "Saari", 
+      title: "Saari me to 💘🙈", 
       image: "/Ipnb/Saari2.jpg", 
-      note: "Saari", 
+      note: "Saari me to 💘🙈", 
       music: "/audio/Id44.mp3",
       favorite: false,
       category: "general"
     },
     { 
       id: 45, 
-      title: "Most speacial one 🧿 din kuch khaas nhi jaa rha tha uska aaj uper se kal raat me mai gadho ki trh use bye bole bina gussa hoker soaa gya kyu ki usne mujhe daant k meri I", 
+      title: "Most speacial one 🧿 ", 
       image: "/Ipnb/special.jpg", 
-      note: "special", 
+      note: "Most speacial one 🧿 ", 
       music: "/audio/Id45.mp3",
       favorite: true,
       category: "general"
