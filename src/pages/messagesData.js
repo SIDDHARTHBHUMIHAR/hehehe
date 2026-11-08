@@ -139,6 +139,14 @@ export const messages = [
     position: { top: "60%", left: "20%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
   },
+  {
+    id: 18,
+    title: "Chezzz sandwish",
+    content: " To madam aapko chezzz sandwish pasnd hai  ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
   
 ];
 
