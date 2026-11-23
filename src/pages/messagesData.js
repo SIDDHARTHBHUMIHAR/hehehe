@@ -147,7 +147,46 @@ export const messages = [
     position: { top: "60%", left: "20%" },
     music: "/assets/music2.mp3"  // ADDED MUSIC
   },
+  {
+    id: 19,
+    title: "Surviving ",
+    content: "survived the whole festive season without seeing Her   ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+  {
+    id: 20,
+    title: "Waiting for her",
+    content: "Uss din k baad dekha he nhi na baat hui h abhi tk pta nhi mujhe yaad bhi krti hogi ki nhi hmesha mn krta h baat krne ka hmesham kitni baar msg likha pr bhjne me dar lgta h khi mera ek msg fir tumhe preshan na kr de but somewhere in my heart I know she is waiting for me to talk to her and I will do it soon ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+   {
+    id: 21,
+    title: "sone se pehle",
+    content: " Use baat kiye bina to lgta hai jaise ab neend he nhi aati h , hum ek dusre se baat kr k good night bole bina nhi sote ab missing sa lgta hai ager baat na ho to",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
+   {
+     id: 22,
+     title: "Monday ka vrat",
+     content: "Vrat rhti h monday ko pura din aur fir raat me khati h , lgta h mujhe bhi vrat rhna shuru krna hoga taki hmari baato ko nazar na lge",
+     color: "#3498db",
+     position: { top: "60%", left: "20%" },
+     music: "/assets/music2.mp3"  // ADDED MUSIC
+   },
+   {
+    id: 19,
+    title: "Bhut pyar krta hu tumhe",
+    content: "Bhut pyar krta hu tumhe mai aur utna he darta bhi hu kbhi kisi chiz k liye itna daar nhi lga jitna tumhe khone se lgata hai shayad isiliye tumhe samne se yea btaa nhi pata hu pr Mahadev pr vishwas h vo meri parvti ko mujh se mila denge  ",
+    color: "#3498db",
+    position: { top: "60%", left: "20%" },
+    music: "/assets/music2.mp3"  // ADDED MUSIC
+  },
   
 ];
-
 
